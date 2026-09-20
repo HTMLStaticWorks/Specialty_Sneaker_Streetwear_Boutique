@@ -1,4 +1,4 @@
-/* 
+﻿/* 
     GRAILS Sneaker & Streetwear Boutique - Main Styles
     Design System: Bold Urban Streetwear
 */
@@ -164,7 +164,9 @@ p.fw-bold {
 .nav-link {
     color: var(--text-primary);
     font-weight: 500;
-    margin: 0 10px;
+    margin: 0 3px;
+    padding: 6px 8px;
+    font-size: 0.88rem;
     position: relative;
     transition: var(--transition-smooth);
 }
@@ -174,16 +176,51 @@ p.fw-bold {
         flex-wrap: nowrap;
     }
 
+    .navbar-custom .navbar-brand {
+        flex-shrink: 0;
+        margin-right: 0.8rem;
+    }
+
     .navbar-custom .navbar-collapse {
         flex-wrap: nowrap;
     }
 
     .navbar-custom .navbar-nav {
         flex-wrap: nowrap;
+        gap: 2px;
     }
 
     .navbar-custom .nav-link {
         white-space: nowrap;
+        font-size: 0.83rem;
+        padding: 6px 8px !important;
+        margin: 0 2px !important;
+    }
+
+    .navbar-custom .navbar-collapse > .d-flex {
+        gap: 8px !important;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-custom .nav-link {
+        font-size: 0.86rem;
+        padding: 6px 10px !important;
+        margin: 0 3px !important;
+    }
+
+    .navbar-custom .nav-utility-btn {
+        width: 48px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .navbar-custom .nav-link {
+        font-size: 0.90rem;
+        padding: 6px 12px !important;
+        margin: 0 4px !important;
     }
 }
 
@@ -204,8 +241,9 @@ p.fw-bold {
 }
 
 .nav-utility-btn {
-    width: 56px;
-    height: 44px;
+    width: 46px;
+    height: 38px;
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1504,17 +1542,18 @@ body.dark-mode .drop-release-img-box {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 50px;
     border: 2px solid var(--primary-accent);
     background: transparent;
     color: var(--primary-accent);
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.3px;
+    font-size: 0.82rem;
+    letter-spacing: 0.2px;
     line-height: 1;
     white-space: nowrap;
+    flex-shrink: 0;
     transition: var(--transition-smooth);
     text-decoration: none !important;
     cursor: pointer;
