@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAILS | GRAILS Sneaker &amp; Streetwear Boutique</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="description"
+        content="GRAILS is your premier specialty sneaker and streetwear boutique. Shop exclusive drops, authenticated kicks, and the freshest fits from Nike, Jordan, Adidas, New Balance, and more.">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+
+<body>
+
+    <!-- Floating Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="brand-logo" aria-label="GRAILS">
+                    <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                    <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Release Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Authentication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                    <button id="darkModeToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+                    <button id="rtlToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle RTL mode">RTL</button>
+                    <a href="contact.html" class="btn-visit-info d-none d-xl-inline-flex" id="visitInfoBtn" aria-label="Visit Info"><i class="bi bi-geo-alt-fill"></i> Visit Info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal">
+                    <span class="accent-font fw-bold text-uppercase mb-3 d-block"
+                        style="color: var(--primary-accent); letter-spacing: 2px;">New Drop — Limited Release</span>
+                    <h1 class="hero-title">Where Heat Meets Authenticity</h1>
+                    <p class="hero-subtitle">GRAILS is your go-to boutique for deadstock sneakers &amp; hype streetwear. Every pair verified, every style curated for those who live the culture.</p>
+                    <div class="d-flex gap-3">
+                        <a href="services.html" class="btn-premium">Shop Now</a>
+                        <a href="gallery.html" class="btn-outline-premium">View Drops</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 reveal">
+                    <div class="position-relative">
+                        <div class="floating-elem">
+                            <img src="https://images.pexels.com/photos/4398341/pexels-photo-4398341.jpeg" alt="Exclusive Sneaker Drop"
+                                class="img-fluid rounded-circle shadow-lg" style="border: 8px solid white; width: 450px; height: 450px; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Upcoming Drops Section -->
+    <section class="section-padding home1-services-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Upcoming Drops</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Exclusive releases dropping soon. Be first in line — limited pairs, no restocks.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="card-luxury text-center d-flex flex-column h-100 home1-service-card">
+                        <span class="badge rounded-pill mb-3" style="background: var(--primary-accent); color: white; font-size: 0.75rem; letter-spacing: 1px;">DROPPING SAT</span>
+                        <h3 class="home1-service-title">Air Jordan 1 Retro High OG</h3>
+                        <p class="text-secondary mb-4 home1-service-text">Chicago Reimagined colourway. Hand-authenticated. Sizes 6–14. Reserve your pair before the drop clock hits zero.</p>
+                        <a href="services.html"
+                            class="btn btn-link fw-bold text-decoration-none mt-auto" style="color: var(--primary-accent);">Reserve Pair <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-luxury text-center d-flex flex-column h-100 home1-service-card">
+                        <span class="badge rounded-pill mb-3" style="background: var(--secondary-accent); color: white; font-size: 0.75rem; letter-spacing: 1px;">DROPPING SUN</span>
+                        <h3 class="home1-service-title">New Balance 550 "Moonshot"</h3>
+                        <p class="text-secondary mb-4 home1-service-text">Exclusive collab colourway, available only at GRAILS. Crisp leather build with premium suede overlays. Sizes 7–13.</p>
+                        <a href="services.html" class="btn btn-link fw-bold text-decoration-none mt-auto"
+                            style="color: var(--secondary-accent);">Reserve Pair <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="card-luxury text-center d-flex flex-column h-100 home1-service-card">
+                        <span class="badge rounded-pill mb-3" style="background: var(--third-accent); color: white; font-size: 0.75rem; letter-spacing: 1px;">DROPPING FRI</span>
+                        <h3 class="home1-service-title">Adidas Samba OG "GRAILS Edition"</h3>
+                        <p class="text-secondary mb-4 home1-service-text">Our boutique exclusive. Premium gum sole and hand-stitched logo. Only 50 pairs available. No raffles — first come, first served.</p>
+                        <a href="services.html" class="btn btn-link fw-bold text-decoration-none mt-auto"
+                            style="color: var(--third-accent);">Reserve Pair <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / Authentication Strip -->
+    <section class="py-5 home1-trust-strip" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="row align-items-center g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-patch-check-fill fs-2" style="color: var(--primary-accent);"></i>
+                        <span class="accent-font fw-bold mt-2">100% Authenticated</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-box-seam fs-2 text-success"></i>
+                        <span class="accent-font fw-bold mt-2">DS &amp; VNDS Only</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-award fs-2" style="color: var(--third-accent);"></i>
+                        <span class="accent-font fw-bold mt-2">Boutique Exclusives</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-shop fs-2 text-danger"></i>
+                        <span class="accent-font fw-bold mt-2">In-Store &amp; Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Drops Preview -->
+    <section class="section-padding bg-white" id="portfolio">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 class="fw-bold portfolio-heading">Recent Drops</h2>
+                <p class="portfolio-subtitle">A look at what just landed at GRAILS — all verified, all heat.</p>
+            </div>
+            <div class="row g-4 reveal">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-luxury p-0 overflow-hidden border-0 shadow-sm hover-glow">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyOtzDXixF1HBYRc0CSrib5-C8HYRSDhEA9Lolfa_zpA&s=10" alt="Jordan 1 Drop" class="w-100 object-fit-cover"
+                            style="height: 400px; border-radius: 30px;">
+                        <div class="p-4 text-center">
+                            <h4 class="brand-font mb-1">Jordan 1 Retro High</h4>
+                            <p class="small text-secondary mb-0">Chicago — Sold Out in 3 mins</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-luxury p-0 overflow-hidden border-0 shadow-sm hover-glow">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8HHUpj6nlPhNULQKXSnmi-8cVDPY6_lDfgx8GYm8xZxNKd_51n3x8KmfI&s=10" alt="Yeezy Drop" class="w-100 object-fit-cover"
+                            style="height: 400px; border-radius: 30px;">
+                        <div class="p-4 text-center">
+                            <h4 class="brand-font mb-1">Yeezy 350 V2</h4>
+                            <p class="small text-secondary mb-0">Bone colourway — Limited pairs left</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-third-card">
+                    <div class="card-luxury p-0 overflow-hidden border-0 shadow-sm hover-glow">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf0jcpH-fGjzWvpcgQD9tI_-iBuY3m-f02yMzqaRsG2v3pDRZf2zkziCZC&s=10" alt="NB 550 Drop"
+                            class="w-100 object-fit-cover" style="height: 400px; border-radius: 30px;">
+                        <div class="p-4 text-center">
+                            <h4 class="brand-font mb-1">New Balance 550</h4>
+                            <p class="small text-secondary mb-0">White/Green — In stock now</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn-premium px-5">Shop All Sneakers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We're About -->
+    <section class="section-padding overflow-hidden" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal-left">
+                    <h2 class="hero-title mb-4">The Culture, <span class="glow-text">Authenticated</span></h2>
+                    <p class="fs-5 text-secondary mb-4">We built GRAILS for sneakerheads, by sneakerheads. Every sneaker on our shelves has passed a rigorous multi-point authentication check — because you deserve the real thing, every time.</p>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-white p-2 shadow-sm pulse-glow"><i
+                                    class="bi bi-star-fill" style="color: var(--primary-accent);"></i></div>
+                            <span class="fw-bold">Multi-Point Authentication Process</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-white p-2 shadow-sm pulse-glow"><i
+                                    class="bi bi-lightning-fill" style="color: var(--primary-accent);"></i></div>
+                            <span class="fw-bold">Exclusive Boutique &amp; Brand Collabs</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-white p-2 shadow-sm pulse-glow"><i
+                                    class="bi bi-shield-check" style="color: var(--primary-accent);"></i></div>
+                            <span class="fw-bold">Buyer Protection Guarantee</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 reveal-right">
+                    <div class="position-relative">
+                        <img src="https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d76acbaf-c4d0-4b6f-b1b3-fe4bf2bc07b0/WMNS+AIR+JORDAN+1+RETRO+HI+OG.png" alt="GRAILS Store"
+                            class="img-fluid rounded-5 shadow-lg border-white"
+                            style="border-width: 10px !important; border-style: solid;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Brand -->
+    <section class="section-padding bg-white" id="occasions">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2 style="color: var(--text-primary);">Shop by Brand</h2>
+                <p>From classic silhouettes to the latest collabs.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6 reveal" style="transition-delay: 100ms;">
+                    <div class="hexagon-card p-5 d-flex flex-column align-items-center text-center">
+                        <i class="bi bi-trophy fs-1 mb-3"></i>
+                        <h4 class="brand-font">Nike / Jordan</h4>
+                        <p class="small opacity-75">Air Jordans, Dunks, Air Max and exclusive colourways.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal" style="transition-delay: 200ms;">
+                    <div class="hexagon-card p-5 d-flex flex-column align-items-center text-center">
+                        <i class="bi bi-lightning-charge fs-1 mb-3"></i>
+                        <h4 class="brand-font">Adidas / Yeezy</h4>
+                        <p class="small opacity-75">Sambas, Superstars, Yeezys, and limited collab drops.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal" style="transition-delay: 300ms;">
+                    <div class="hexagon-card p-5 d-flex flex-column align-items-center text-center">
+                        <i class="bi bi-grid-3x3 fs-1 mb-3"></i>
+                        <h4 class="brand-font">New Balance</h4>
+                        <p class="small opacity-75">550s, 9060s, 2002Rs and designer collab editions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal" style="transition-delay: 400ms;">
+                    <div class="hexagon-card p-5 d-flex flex-column align-items-center text-center">
+                        <i class="bi bi-brush fs-1 mb-3"></i>
+                        <h4 class="brand-font">Streetwear</h4>
+                        <p class="small opacity-75">Supreme, Off-White, Palace, KAWS and exclusive tees &amp; hoodies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="mb-4">
+                        <span class="brand-logo" aria-label="GRAILS">
+                            <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                            <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                        </span>
+                    </h3>
+                    <p class="text-secondary-light" style="opacity: 0.8;">Your specialty sneaker &amp; streetwear boutique. Authenticated kicks, exclusive drops, and the freshest fits — all in one place.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4">
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Sneakers</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Streetwear</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gallery.html" class="text-white text-decoration-none opacity-75">Release Calendar</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none opacity-75">Authentication</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none opacity-75">Visit Store</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="accent-font mb-4">Drop Alerts</h5>
+                    <p class="small text-secondary-light">Subscribe to get notified before every drop. No spam, just heat.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Your Email">
+                        <button class="btn btn-premium" type="button">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center small opacity-50">
+                &copy; 2026 GRAILS Sneaker &amp; Streetwear Boutique. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

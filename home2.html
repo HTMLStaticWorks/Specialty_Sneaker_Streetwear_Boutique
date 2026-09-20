@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAILS | Drops &amp; Streetwear Boutique Edition</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="description"
+        content="Discover limited sneaker drops, authenticated grails, and exclusive streetwear collabs at GRAILS Boutique.">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+
+<body>
+    <!-- Floating Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="brand-logo" aria-label="GRAILS">
+                    <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                    <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Release Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Authentication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                    <button id="darkModeToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+                    <button id="rtlToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle RTL mode">RTL</button>
+                    <a href="contact.html" class="btn-visit-info d-none d-xl-inline-flex" id="visitInfoBtn" aria-label="Visit Info"><i class="bi bi-geo-alt-fill"></i> Visit Info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal">
+                    <span class="accent-font fw-bold text-uppercase mb-3 d-block"
+                        style="color: var(--primary-accent); letter-spacing: 2px;">EXCLUSIVE VAULT COLLECTION</span>
+                    <h1 class="hero-title">Curated Streetwear &amp; Grails</h1>
+                    <p class="hero-subtitle">GRAILS is your premier specialty destination for deadstock kicks, hype streetwear, and certified authentication.</p>
+                    <div class="d-flex gap-3">
+                        <a href="services.html" class="btn-premium">Explore Shop</a>
+                        <a href="gallery.html" class="btn-outline-premium">Drop Calendar</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 reveal">
+                    <div class="position-relative">
+                        <div class="floating-elem">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzsL8x_YPsXVJx_07FmBruTdZvT7Iw3Auqsis5y2ZiMayPd_doJGUsgSEn&s=10" alt="GRAILS Drop"
+                                class="img-fluid rounded-5 shadow-lg" style="border: 6px solid var(--primary-accent);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drop Releases Feature Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Featured Drop Releases</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Handpicked weekly heat, strictly verified and ready to ship worldwide or collect in-store.</p>
+            </div>
+            <div class="row g-4 gy-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4 d-flex reveal">
+                    <div class="card-luxury text-center d-flex flex-column w-100 p-4">
+                        <span class="badge rounded-pill mb-3 mx-auto" style="background: var(--primary-accent); color: white;">JUST LANDED</span>
+                        <div class="mb-3 overflow-hidden rounded-4 drop-release-img-box" style="height: 270px;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQ-8QLhRSKlOzvKwAMSCacvUrO9i65V7gmWyi0jxBuD9TVBT5XOhMeGea&s=10" alt="Jordan 1 Chicago" class="img-fluid drop-release-img" style="height: 100%; width: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                        <h3 class="h4 mb-2">Air Jordan 1 High OG</h3>
+                        <p class="text-secondary small mb-3">Chicago Lost &amp; Found. 100% deadstock with original factory receipt and box accessories.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                            <span class="fs-4 fw-bold" style="color: var(--primary-accent);">&pound;385</span>
+                            <a href="services.html" class="btn btn-sm btn-premium">Shop Pair</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 d-flex reveal">
+                    <div class="card-luxury text-center d-flex flex-column w-100 p-4">
+                        <span class="badge rounded-pill mb-3 mx-auto" style="background: var(--secondary-accent); color: white;">LIMITED RESTOCK</span>
+                        <div class="mb-3 overflow-hidden rounded-4 drop-release-img-box" style="height: 270px;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJoh8HAK5i8FdddrYYfjpBKwhesb2IwXDkWxf1djJQQ&s=10" alt="Travis Scott SB Dunk" class="img-fluid drop-release-img" style="height: 100%; width: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                        <h3 class="h4 mb-2">Nike SB Dunk Low</h3>
+                        <p class="text-secondary small mb-3">Travis Scott Cactus Jack edition. Tear-away paisley canvas with rope laces and special box.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                            <span class="fs-4 fw-bold" style="color: var(--secondary-accent);">&pound;1,250</span>
+                            <a href="services.html" class="btn btn-sm btn-premium">Shop Pair</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 d-flex reveal">
+                    <div class="card-luxury text-center d-flex flex-column w-100 p-4">
+                        <span class="badge rounded-pill mb-3 mx-auto" style="background: var(--third-accent); color: white;">VAULT GRAIL</span>
+                        <div class="mb-3 overflow-hidden rounded-4 drop-release-img-box" style="height: 270px;">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx64cM6TiErGmG07ib9CQunLaPojvx7IHpypXzcTQYeNxEAh8uJEW6EkYO&s=10" alt="New Balance 990v3" class="img-fluid drop-release-img" style="height: 100%; width: 100%; object-fit: cover; object-position: center;">
+                        </div>
+                        <h3 class="h4 mb-2">New Balance 990v3</h3>
+                        <p class="text-secondary small mb-3">JJJJound Olive edition. Made in USA premium pigskin suede with custom packaging.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                            <span class="fs-4 fw-bold" style="color: var(--third-accent);">&pound;540</span>
+                            <a href="services.html" class="btn btn-sm btn-premium">Shop Pair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: THE VAULT ARCHIVE (Grail Collabs) -->
+    <!-- ============================================ -->
+    <section class="vault-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="accent-font fw-bold text-uppercase d-block mb-2"
+                    style="color: var(--primary-accent); letter-spacing: 2px;">Rare Archive Vault</span>
+                <h2>The Grail Vault &amp; Micro-Drops</h2>
+                <p class="text-secondary mx-auto" style="max-width: 680px;">
+                    Ultra-rare deadstock grails, museum-grade collabs, and collector pieces preserved in our climate-regulated vault.
+                </p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Main Featured Grail Showcase -->
+                <div class="col-lg-7 reveal">
+                    <div class="vault-hero-card h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                            <span class="vault-badge"><i class="bi bi-shield-fill-check"></i> Certified Vault Pair</span>
+                            <div class="vault-countdown">
+                                <span class="pulse-dot"></span>
+                                <span>Next Vault Unlock: <strong id="vaultCountdown">14h 28m 42s</strong></span>
+                            </div>
+                        </div>
+
+                        <div class="vault-img-box">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQ-8QLhRSKlOzvKwAMSCacvUrO9i65V7gmWyi0jxBuD9TVBT5XOhMeGea&s=10"
+                                alt="Travis Scott x Air Jordan 1 Low OG Reverse Mocha">
+                        </div>
+
+                        <h3 class="h3 mb-2">Travis Scott x Air Jordan 1 Low OG 'Reverse Mocha'</h3>
+                        <p class="text-secondary mb-3">
+                            The defining holy grail collab. Crafted in supple Sail nubuck and Ridgerock suede with reverse oversized swoosh and Cactus Jack heel embroidery.
+                        </p>
+
+                        <div class="vault-chip-list">
+                            <span class="vault-chip"><i class="bi bi-patch-check-fill text-warning"></i> Condition: 10/10 Deadstock</span>
+                            <span class="vault-chip"><i class="bi bi-box-seam text-info"></i> OG All + Factory Laces</span>
+                            <span class="vault-chip"><i class="bi bi-qr-code text-success"></i> Cryptographic NFC Chip</span>
+                            <span class="vault-chip"><i class="bi bi-globe text-primary"></i> Size: UK 9.5 / US 10.5</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top flex-wrap gap-3">
+                            <div>
+                                <small class="text-secondary d-block">Vault Valuation</small>
+                                <span class="fs-3 fw-bold" style="color: var(--primary-accent);">&pound;1,180</span>
+                                <span class="text-decoration-line-through text-secondary small ms-2">&pound;1,350</span>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="contact.html" class="btn btn-outline-premium">Book Private Viewing</a>
+                                <a href="services.html" class="btn btn-premium">Secure Grail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Stacked Mini-Grail Showcase -->
+                <div class="col-lg-5 reveal">
+                    <div class="d-flex flex-column h-100 justify-content-between">
+                        <!-- Mini Grail 1 -->
+                        <div class="vault-item-card">
+                            <div class="vault-thumb">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJoh8HAK5i8FdddrYYfjpBKwhesb2IwXDkWxf1djJQQ&s=10"
+                                    alt="Off-White x Nike Air Presto">
+                            </div>
+                            <div class="vault-item-info">
+                                <span class="vault-stock-pill">Only 1 Pair Left</span>
+                                <h4 class="h5 mb-1">Off-White x Nike Air Presto</h4>
+                                <p class="text-secondary small mb-2">The Ten OG Archive Edition | UK 9</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold" style="color: var(--primary-accent);">&pound;1,450</span>
+                                    <a href="services.html" class="btn btn-sm btn-outline-premium py-1 px-3">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Grail 2 -->
+                        <div class="vault-item-card">
+                            <div class="vault-thumb">
+                                <img src="https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d76acbaf-c4d0-4b6f-b1b3-fe4bf2bc07b0/WMNS+AIR+JORDAN+1+RETRO+HI+OG.png"
+                                    alt="Supreme Box Logo Hooded Sweatshirt">
+                            </div>
+                            <div class="vault-item-info">
+                                <span class="vault-stock-pill">Vault Priority</span>
+                                <h4 class="h5 mb-1">Supreme Box Logo FW23</h4>
+                                <p class="text-secondary small mb-2">Heavyweight Crossgrain Cotton | M</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold" style="color: var(--primary-accent);">&pound;425</span>
+                                    <a href="services.html" class="btn btn-sm btn-outline-premium py-1 px-3">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Grail 3 -->
+                        <div class="vault-item-card">
+                            <div class="vault-thumb">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx64cM6TiErGmG07ib9CQunLaPojvx7IHpypXzcTQYeNxEAh8uJEW6EkYO&s=10"
+                                    alt="New Balance 990v3 JJJJound">
+                            </div>
+                            <div class="vault-item-info">
+                                <span class="vault-stock-pill">Restock Alert</span>
+                                <h4 class="h5 mb-1">New Balance 990v3 JJJJound</h4>
+                                <p class="text-secondary small mb-2">Dusty Olive Suede | UK 10</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="fw-bold" style="color: var(--primary-accent);">&pound;540</span>
+                                    <a href="services.html" class="btn btn-sm btn-outline-premium py-1 px-3">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Concierge Card -->
+                        <div class="vault-concierge-card mt-2">
+                            <h5 class="fw-bold mb-1"><i class="bi bi-lightning-charge text-primary-accent me-1"></i> Hunting a Specific Grail?</h5>
+                            <p class="small text-secondary mb-3">Our global network can source any rare pair or streetwear grail in deadstock condition within 72 hours.</p>
+                            <a href="contact.html" class="btn btn-sm btn-premium px-4">Request Grail Sourcing</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Verification Banner -->
+    <section class="py-5" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="row align-items-center text-center g-4">
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-patch-check-fill fs-1 text-primary-accent"></i>
+                    <h5 class="fw-bold mt-2 mb-1">100% Authentic</h5>
+                    <p class="small text-secondary mb-0">12-point verified inspection</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-lightning-charge-fill fs-1 text-secondary-accent"></i>
+                    <h5 class="fw-bold mt-2 mb-1">Express Dispatch</h5>
+                    <p class="small text-secondary mb-0">Same-day tracked shipping</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-shield-lock-fill fs-1 text-third-accent"></i>
+                    <h5 class="fw-bold mt-2 mb-1">NFC Tamper Sealed</h5>
+                    <p class="small text-secondary mb-0">Verifiable digital certificate</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <i class="bi bi-shop fs-1 text-danger"></i>
+                    <h5 class="fw-bold mt-2 mb-1">Visit Manchester</h5>
+                    <p class="small text-secondary mb-0">85 Sneaker Row boutique</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======================================================= -->
+    <!-- SECTION 2: THE FORENSIC LAB (4-Stage Verification Lab) -->
+    <!-- ======================================================= -->
+    <section class="forensic-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="accent-font fw-bold text-uppercase d-block mb-2"
+                    style="color: var(--primary-accent); letter-spacing: 2px;">Microscopic Forensics</span>
+                <h2>The GRAILS Verification Lab</h2>
+                <p class="text-secondary mx-auto" style="max-width: 680px;">
+                    Zero fakes. Zero compromise. Every sneaker and garment passes through our proprietary 4-stage forensic authentication protocol before reaching our shelves.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Stage 1 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="forensic-card">
+                        <span class="forensic-stage-tag">STAGE 01</span>
+                        <div class="forensic-icon-box icon-cyan">
+                            <i class="bi bi-upc-scan"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">UV &amp; Optical Forensics</h3>
+                        <p class="text-secondary small mb-3">
+                            High-frequency 365nm ultraviolet sweeps detect invisible factory ink stamps, midsole glue leak luminescence, and unauthorized stitching guidelines.
+                        </p>
+                        <div class="forensic-metric-badge">
+                            <span>Inspection Spectrum</span>
+                            <span class="metric-val">365nm UV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="forensic-card">
+                        <span class="forensic-stage-tag">STAGE 02</span>
+                        <div class="forensic-icon-box icon-orange">
+                            <i class="bi bi-rulers"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Stitch &amp; Pitch Precision</h3>
+                        <p class="text-secondary small mb-3">
+                            Digital micrometer analysis measuring stitch density per inch, toe-box perforation pitch, and panel overlap tolerance against authentic factory molds.
+                        </p>
+                        <div class="forensic-metric-badge">
+                            <span>Tolerance Threshold</span>
+                            <span class="metric-val">&plusmn;0.1 mm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="forensic-card">
+                        <span class="forensic-stage-tag">STAGE 03</span>
+                        <div class="forensic-icon-box icon-gold">
+                            <i class="bi bi-fingerprint"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Weight &amp; Material Density</h3>
+                        <p class="text-secondary small mb-3">
+                            Gram-precision scale calibration, sole rubber durometer hardness checks, and factory olfactory profile testing to confirm authentic raw material origins.
+                        </p>
+                        <div class="forensic-metric-badge">
+                            <span>Weight Variance</span>
+                            <span class="metric-val">&lt; 1.5g Delta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="forensic-card">
+                        <span class="forensic-stage-tag">STAGE 04</span>
+                        <div class="forensic-icon-box icon-emerald">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Tamper-Proof NFC Lock</h3>
+                        <p class="text-secondary small mb-3">
+                            Upon verification, an encrypted cryptographic NFC tag is permanently locked to the shoe eyelet, tying your pair to an unforgeable digital certificate.
+                        </p>
+                        <div class="forensic-metric-badge">
+                            <span>Certification</span>
+                            <span class="metric-val">Encrypted NFC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forensic Lab Action Ribbon -->
+            <div class="forensic-cta-ribbon reveal">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <div class="d-flex align-items-center gap-3 mb-2 flex-wrap">
+                            <span class="badge rounded-pill px-3 py-2" style="background: var(--primary-accent); font-size: 0.8rem;">IN-STORE &amp; ONLINE SERVICE</span>
+                            <span class="text-warning small"><i class="bi bi-star-fill"></i> 200% Money-Back Authenticity Guarantee</span>
+                        </div>
+                        <h3 class="h3 fw-bold mb-1">Have Kicks You Want Legit Checked or Consigned?</h3>
+                        <p class="text-white-50 mb-0">Visit our Manchester store for a walk-in 15-minute authentication or submit your heat online for immediate consignment.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <div class="d-flex gap-3 justify-content-lg-end flex-wrap">
+                            <a href="about.html" class="btn btn-outline-light">Legit Check (&pound;25)</a>
+                            <a href="pricing.html" class="btn btn-premium">Consign With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="mb-4">
+                        <span class="brand-logo" aria-label="GRAILS">
+                            <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                            <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                        </span>
+                    </h3>
+                    <p class="text-secondary-light" style="opacity: 0.8;">Your specialty sneaker &amp; streetwear boutique. Authenticated kicks, exclusive drops, and the freshest fits — all in one place.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4">
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Sneakers</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Streetwear</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gallery.html" class="text-white text-decoration-none opacity-75">Release Calendar</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none opacity-75">Authentication</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none opacity-75">Visit Store</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="accent-font mb-4">Drop Alerts</h5>
+                    <p class="small text-secondary-light">Subscribe to get notified before every drop. No spam, just heat.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Your Email">
+                        <button class="btn btn-premium" type="button">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center small opacity-50">
+                &copy; 2026 GRAILS Sneaker &amp; Streetwear Boutique. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Dynamic Live Countdown for Vault Unlock
+        (function() {
+            const timerElem = document.getElementById('vaultCountdown');
+            if (!timerElem) return;
+            let secondsLeft = 14 * 3600 + 28 * 60 + 42;
+            setInterval(() => {
+                if (secondsLeft > 0) secondsLeft--;
+                const h = Math.floor(secondsLeft / 3600);
+                const m = Math.floor((secondsLeft % 3600) / 60);
+                const s = secondsLeft % 60;
+                timerElem.textContent = h + 'h ' + (m < 10 ? '0' : '') + m + 'm ' + (s < 10 ? '0' : '') + s + 's';
+            }, 1000);
+        })();
+    </script>
+</body>
+
+</html>
+

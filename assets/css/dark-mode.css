@@ -1,0 +1,494 @@
+/* 
+    GRAILS Sneaker & Streetwear Boutique - Dark Mode Styles
+*/
+
+body.dark-mode {
+    --primary-bg: #0d0d0d;
+    --secondary-bg: #1a1a1a;
+    --card-bg: rgba(26, 26, 26, 0.90);
+    --primary-accent: #ff6600;
+    --secondary-accent: #ff8800;
+    --third-accent: #c9a84c;
+    --gold-highlight: #c9a84c;
+    --text-primary: #f0ede8;
+    --text-secondary: #aaa49e;
+    --border-color: rgba(255, 102, 0, 0.28);
+    --soft-glow: rgba(255, 102, 0, 0.30);
+    --main-gradient: linear-gradient(135deg, #ff6600, #cc3300, #ff8800);
+    --btn-gradient: linear-gradient(135deg, #ff6600, #ff8800);
+}
+
+body.dark-mode .navbar-custom.scrolled {
+    background: rgba(13, 13, 13, 0.92);
+}
+
+body.dark-mode .card-luxury {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+/* Homepage Portfolio: keep card text readable in dark mode */
+body.dark-mode #portfolio .card-luxury h4 {
+    color: #fff8f3 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+body.dark-mode #portfolio .card-luxury p {
+    color: #d8d1df !important;
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+body.dark-mode .auth-social-btn {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .auth-social-btn .bi-apple {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .auth-social-btn:hover,
+body.dark-mode .auth-social-btn:focus,
+body.dark-mode .auth-social-btn:focus-visible {
+    color: var(--text-primary) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(79, 141, 255, 0.4) !important;
+}
+
+body.dark-mode .brand-logo-magic {
+    color: #ffffff !important;
+}
+
+/* Header Navigation Menu - Dark Mode Text Visibility */
+body.dark-mode .navbar-custom .navbar-nav .nav-link,
+body.dark-mode .navbar-custom .nav-link,
+body.dark-mode .nav-link {
+    color: #f0ede8 !important;
+}
+
+body.dark-mode .navbar-custom .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-custom .navbar-nav .nav-link:focus,
+body.dark-mode .navbar-custom .nav-link:hover,
+body.dark-mode .navbar-custom .nav-link:focus,
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link:focus {
+    color: var(--primary-accent) !important;
+}
+
+body.dark-mode .navbar-custom .navbar-nav .nav-link.active,
+body.dark-mode .navbar-custom .navbar-nav .nav-link.show,
+body.dark-mode .navbar-custom .nav-link.active,
+body.dark-mode .nav-link.active {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+body.dark-mode .navbar-custom .navbar-nav .nav-link.active::after,
+body.dark-mode .navbar-custom .nav-link.active::after,
+body.dark-mode .nav-link.active::after {
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+    box-shadow: 0 0 14px rgba(255, 102, 0, 0.6);
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    /* Dark mode overrides the light-mode mobile navbar panel */
+    body.dark-mode .navbar-custom {
+        background: rgba(13, 13, 13, 0.97) !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    body.dark-mode .navbar-custom .navbar-collapse {
+        background: rgba(18, 18, 18, 0.98);
+        border: 1px solid rgba(255, 102, 0, 0.25);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    body.dark-mode .navbar-custom .nav-link {
+        color: #f0ede8 !important;
+        border-radius: 10px;
+        padding: 10px 14px;
+        margin: 2px 0;
+        border-left: 3px solid transparent;
+        transition: all 0.25s ease;
+    }
+
+    body.dark-mode .navbar-custom .nav-link:hover,
+    body.dark-mode .navbar-custom .nav-link:focus {
+        color: var(--primary-accent) !important;
+        background: rgba(255, 102, 0, 0.10) !important;
+        border-left-color: var(--primary-accent) !important;
+    }
+
+    body.dark-mode .navbar-custom .nav-link.active {
+        color: var(--primary-accent) !important;
+        font-weight: 700;
+        background: rgba(255, 102, 0, 0.15) !important;
+        border-left: 3px solid var(--primary-accent) !important;
+        box-shadow: inset 0 0 12px rgba(255, 102, 0, 0.08);
+    }
+
+    body.dark-mode .navbar-custom .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    body.dark-mode .navbar-custom .navbar-toggler-icon {
+        filter: invert(1);
+    }
+}
+
+body.dark-mode .nav-utility-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 248, 243, 0.35);
+    color: #d7dfff;
+}
+
+body.dark-mode .nav-utility-btn:hover,
+body.dark-mode .nav-utility-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    color: #eef2ff;
+    border-color: rgba(255, 248, 243, 0.55);
+}
+
+body.dark-mode .about-hero:not(.page-hero-enhanced) {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .page-hero-enhanced {
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255, 102, 0, 0.20), transparent 44%),
+        radial-gradient(circle at 88% 85%, rgba(201, 168, 76, 0.18), transparent 45%),
+        linear-gradient(180deg, rgba(13, 13, 13, 0.98), rgba(26, 26, 26, 0.95)) !important;
+    border-bottom-color: rgba(255, 102, 0, 0.30) !important;
+}
+
+body.dark-mode .page-hero-badge {
+    color: #ffcc99;
+    background: rgba(255, 102, 0, 0.18);
+    border-color: rgba(255, 102, 0, 0.38);
+}
+
+body.dark-mode .page-hero-kpi {
+    background: rgba(13, 13, 13, 0.72);
+    border-color: rgba(255, 102, 0, 0.3);
+}
+
+body.dark-mode .page-hero-kpi strong {
+    color: #ffd0a0;
+}
+
+body.dark-mode .page-hero-media-main {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .page-hero-floating-card {
+    background: rgba(13, 13, 13, 0.90);
+    border-color: rgba(255, 102, 0, 0.36);
+}
+
+body.dark-mode .page-hero-floating-card p {
+    color: var(--text-primary);
+}
+
+body.dark-mode .about-network-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .about-network-section h2 {
+    color: var(--text-primary);
+}
+
+body.dark-mode .about-faq-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .services-onsite-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .services-events-work-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .services-onsite-section .bi-clock-history {
+    color: var(--secondary-accent) !important;
+}
+
+body.dark-mode .services-onsite-section .bi-shield-check {
+    color: var(--third-accent) !important;
+}
+
+body.dark-mode .gallery-intricate-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .gallery-bts-section .bi-camera-reels {
+    color: var(--secondary-accent) !important;
+}
+
+body.dark-mode .gallery-more-content h4 {
+    color: #2d1f35;
+}
+
+body.dark-mode .gallery-more-content p {
+    color: #5f556a !important;
+}
+
+body.dark-mode .gallery-more-content .bi-stars {
+    color: var(--primary-accent) !important;
+    opacity: 1;
+}
+
+body.dark-mode .pricing-difference-section {
+    background: var(--secondary-bg) !important;
+}
+
+body.dark-mode .pricing-how-works .how-works-panel {
+    background: linear-gradient(180deg, rgba(45, 31, 53, 0.9), rgba(26, 20, 30, 0.9));
+    border-color: rgba(79, 141, 255, 0.3);
+}
+
+body.dark-mode .pricing-how-works .how-step-card {
+    background: rgba(26, 20, 30, 0.82);
+    border-color: rgba(139, 92, 246, 0.28);
+}
+
+body.dark-mode .pricing-packages .bg-primary-accent {
+    background: linear-gradient(135deg, #ff6600 0%, #ff8800 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.35);
+}
+
+body.dark-mode .pulse-glow i {
+    color: var(--primary-accent) !important;
+}
+
+
+body.dark-mode .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.dark-mode .form-control:focus {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Auth Pages (Dark Mode): keep inputs light, align radii, and improve label readability */
+body.dark-mode.login-page,
+body.dark-mode.signup-page {
+    --auth-control-radius: 50px;
+}
+
+body.dark-mode.login-page .form-control,
+body.dark-mode.signup-page .form-control {
+    background-color: #e6e8ec !important;
+    color: #2d1f35 !important;
+    border-color: #d3d7de !important;
+    border-radius: var(--auth-control-radius) !important;
+}
+
+body.dark-mode.login-page .form-control:focus,
+body.dark-mode.signup-page .form-control:focus {
+    background-color: #e6e8ec !important;
+    border-color: #c8ccd4 !important;
+}
+
+body.dark-mode.login-page .btn-premium,
+body.dark-mode.signup-page .btn-premium,
+body.dark-mode.login-page .auth-social-btn,
+body.dark-mode.signup-page .auth-social-btn {
+    border-radius: var(--auth-control-radius) !important;
+}
+
+body.dark-mode.login-page .form-label,
+body.dark-mode.signup-page .form-label {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+/* Homepage Dark Mode Fixes */
+body.dark-mode .home1-services-section {
+    background:
+        linear-gradient(rgba(13, 13, 13, 0.96), rgba(13, 13, 13, 0.96)) !important;
+}
+
+body.dark-mode #portfolio,
+body.dark-mode #occasions {
+    background: var(--primary-bg) !important;
+}
+
+body.dark-mode #portfolio .section-title h2,
+body.dark-mode #occasions .section-title h2 {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode #portfolio .section-title p,
+body.dark-mode #occasions .section-title p {
+    color: var(--text-secondary) !important;
+}
+
+/* Home 1 Portfolio: section heading & subtitle dark mode */
+body.dark-mode .portfolio-heading {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .portfolio-subtitle {
+    color: var(--text-secondary) !important;
+}
+
+/* Fix hamburger icon visibility in dark mode */
+body.dark-mode .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Home 2 Vault & Forensic Lab Dark Mode */
+body.dark-mode .vault-section {
+    background: radial-gradient(circle at 15% 30%, rgba(255, 102, 0, 0.10), transparent 50%),
+                radial-gradient(circle at 85% 70%, rgba(201, 168, 76, 0.08), transparent 50%),
+                #111111 !important;
+}
+
+body.dark-mode .vault-hero-card {
+    background: rgba(22, 22, 22, 0.92);
+    border-color: rgba(255, 102, 0, 0.28);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .vault-countdown {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #f0ede8;
+}
+
+body.dark-mode .vault-chip {
+    background: rgba(255, 102, 0, 0.12);
+    border-color: rgba(255, 102, 0, 0.3);
+    color: #f0ede8;
+}
+
+body.dark-mode .vault-item-card {
+    background: rgba(22, 22, 22, 0.92);
+    border-color: rgba(255, 102, 0, 0.2);
+}
+
+body.dark-mode .vault-thumb {
+    background: #1a1a1a;
+}
+
+body.dark-mode .vault-stock-pill {
+    background: rgba(201, 168, 76, 0.2);
+    color: #e5c158;
+}
+
+body.dark-mode .vault-concierge-card {
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.12), rgba(201, 168, 76, 0.12));
+    border-color: rgba(255, 102, 0, 0.4);
+}
+
+body.dark-mode .forensic-section {
+    background: #0d0d0d !important;
+}
+
+body.dark-mode .forensic-card {
+    background: rgba(22, 22, 22, 0.92);
+    border-color: rgba(255, 102, 0, 0.22);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .forensic-card:hover {
+    border-color: #ff6600;
+    box-shadow: 0 20px 45px rgba(255, 102, 0, 0.2);
+}
+
+body.dark-mode .icon-cyan {
+    background: rgba(0, 180, 216, 0.18);
+    color: #48cae4;
+    border-color: rgba(0, 180, 216, 0.35);
+}
+
+body.dark-mode .icon-orange {
+    background: rgba(255, 102, 0, 0.18);
+    color: #ff7a00;
+    border-color: rgba(255, 102, 0, 0.35);
+}
+
+body.dark-mode .icon-gold {
+    background: rgba(201, 168, 76, 0.2);
+    color: #e5c158;
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+body.dark-mode .icon-emerald {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+body.dark-mode .forensic-metric-badge {
+    border-top-color: rgba(255, 255, 255, 0.08);
+    color: #aaa49e;
+}
+
+body.dark-mode .forensic-cta-ribbon {
+    background: linear-gradient(135deg, #181818, #222222);
+    border-color: rgba(255, 102, 0, 0.35);
+}
+/* ============================================================
+   Site Footer - Dark Mode
+   ============================================================ */
+body.dark-mode footer.site-footer,
+body.dark-mode .site-footer {
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .site-footer h3,
+body.dark-mode .site-footer h4,
+body.dark-mode .site-footer h5,
+body.dark-mode .site-footer .accent-font {
+    color: #ffffff !important;
+}
+
+body.dark-mode .site-footer p,
+body.dark-mode .site-footer .text-secondary-light {
+    color: #aaa49e !important;
+}
+
+body.dark-mode .site-footer a.text-white,
+body.dark-mode .site-footer .text-white {
+    color: #ffffff !important;
+}
+
+body.dark-mode .site-footer a.text-white:hover,
+body.dark-mode .site-footer a:hover {
+    color: var(--primary-accent) !important;
+}
+
+body.dark-mode .site-footer .opacity-75 {
+    opacity: 0.75 !important;
+}
+
+body.dark-mode .site-footer .opacity-50 {
+    color: #888888 !important;
+}
+
+body.dark-mode .site-footer hr {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .site-footer input.form-control {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .site-footer input.form-control::placeholder {
+    color: #777777 !important;
+}

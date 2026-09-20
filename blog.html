@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop News &amp; Culture | GRAILS Sneaker &amp; Streetwear Boutique</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="description" content="Read the latest sneaker drop news, streetwear analysis, authentication guides, and editorial features from GRAILS Boutique.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+
+<body>
+    <div id="particles-container"></div>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="brand-logo" aria-label="GRAILS">
+                    <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                    <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Release Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Authentication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                    <button id="darkModeToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars"></i></button>
+                    <button id="rtlToggle" class="btn nav-utility-btn" type="button" aria-label="Toggle RTL mode">RTL</button>
+                    <a href="contact.html" class="btn-visit-info d-none d-xl-inline-flex" id="visitInfoBtn" aria-label="Visit Info"><i class="bi bi-geo-alt-fill"></i> Visit Info</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="section-padding" style="margin-top: 80px;">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>The Streetwear Wire</h2>
+                <p class="text-secondary mx-auto" style="max-width: 600px;">Insider release news, how-to-spot fake guides, and style breakdowns from our boutique team.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 reveal">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBQ-8QLhRSKlOzvKwAMSCacvUrO9i65V7gmWyi0jxBuD9TVBT5XOhMeGea&s=10" alt="How to Authenticate Jordan 1" class="w-100" style="height: 250px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background: var(--primary-accent); color: white;">GUIDE</span>
+                            <h3 class="brand-font fs-4">How to Spot Fake Air Jordan 1s in 2026</h3>
+                            <p class="text-secondary small mb-3">Our lead authenticator shares the key telltale signs: toe box perforation pitch, hourglass silhouette, and UV watermark stamps.</p>
+                            <a href="about.html" class="btn btn-link p-0 text-primary-accent fw-bold text-decoration-none mt-auto">Read Full Guide <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJoh8HAK5i8FdddrYYfjpBKwhesb2IwXDkWxf1djJQQ&s=10" alt="Upcoming Streetwear Drops" class="w-100" style="height: 250px; object-fit: cover;">
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <span class="badge rounded-pill mb-2 align-self-start" style="background: var(--secondary-accent); color: white;">DROPS</span>
+                            <h3 class="brand-font fs-4">Top 5 Collabs Dropping This Season</h3>
+                            <p class="text-secondary small mb-3">From Travis Scott Jumpman Jack to Corteiz x Nike Air Max 95, here are the releases poised to define secondary market resale prices.</p>
+                            <a href="gallery.html" class="btn btn-link p-0 text-secondary-accent fw-bold text-decoration-none mt-auto">View Drop Calendar <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="mb-4">
+                        <span class="brand-logo" aria-label="GRAILS">
+                            <span class="brand-logo-icon" aria-hidden="true"><i class="bi bi-fire"></i></span>
+                            <span class="brand-logo-text"><span class="brand-logo-sparkle">GRA</span><span class="brand-logo-magic">ILS</span></span>
+                        </span>
+                    </h3>
+                    <p class="text-secondary-light" style="opacity: 0.8;">Your specialty sneaker &amp; streetwear boutique. Authenticated kicks, exclusive drops, and the freshest fits — all in one place.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4">
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Sneakers</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Streetwear</a></li>
+                        <li><a href="services.html" class="text-white text-decoration-none opacity-75">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="accent-font mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="gallery.html" class="text-white text-decoration-none opacity-75">Release Calendar</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none opacity-75">Authentication</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none opacity-75">Visit Store</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="accent-font mb-4">Drop Alerts</h5>
+                    <p class="small text-secondary-light">Subscribe to get notified before every drop. No spam, just heat.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Your Email">
+                        <button class="btn btn-premium" type="button">Notify Me</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center small opacity-50">
+                &copy; 2026 GRAILS Sneaker &amp; Streetwear Boutique. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
