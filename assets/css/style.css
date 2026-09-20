@@ -1,4 +1,4 @@
-﻿/* 
+/* 
     GRAILS Sneaker & Streetwear Boutique - Main Styles
     Design System: Bold Urban Streetwear
 */
@@ -18,6 +18,7 @@
     --text-secondary: #555555;
     --border-color: rgba(255, 85, 0, 0.15);
     --soft-glow: rgba(255, 85, 0, 0.22);
+    --card-badge-bg: rgba(0, 0, 0, 0.06);
 
     /* Gradients */
     --main-gradient: linear-gradient(135deg, #ff5500, #cc3300, #ff8800);
@@ -197,7 +198,7 @@ p.fw-bold {
         margin: 0 2px !important;
     }
 
-    .navbar-custom .navbar-collapse > .d-flex {
+    .navbar-custom .navbar-collapse>.d-flex {
         gap: 8px !important;
         flex-shrink: 0;
     }
@@ -287,6 +288,7 @@ p.fw-bold {
     font-size: 1.65rem;
     line-height: 1;
     letter-spacing: 0.2px;
+    direction: ltr;
 }
 
 .brand-logo-icon {
@@ -309,6 +311,8 @@ p.fw-bold {
 .brand-logo-text {
     display: inline-flex;
     align-items: baseline;
+    direction: ltr;
+    unicode-bidi: isolate;
 }
 
 .brand-logo-sparkle {
@@ -317,6 +321,19 @@ p.fw-bold {
 
 .brand-logo-magic {
     color: var(--secondary-accent);
+}
+
+/* Ensure brand logo and its text preserve correct LTR orientation in RTL mode */
+html[dir="rtl"] .brand-logo,
+html[dir="rtl"] .brand-logo-text {
+    direction: ltr !important;
+    unicode-bidi: isolate;
+    text-align: left;
+}
+
+html[dir="rtl"] .navbar-custom .navbar-brand {
+    margin-right: 0 !important;
+    margin-left: 0.8rem !important;
 }
 
 .login-page .brand-logo,
@@ -593,6 +610,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
 /* Mobile/Tablet Navbar Menu Panel - Light Mode */
 @media (max-width: 991.98px) {
+
     /* Solid bg on navbar bar so toggler icon is always visible */
     .navbar-custom {
         background: rgba(245, 244, 242, 0.97) !important;
@@ -648,6 +666,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
 /* Header: use tablet-style navbar layout at 1024 view - Light Mode */
 @media (min-width: 992px) and (max-width: 1024px) {
+
     /* Solid bg on navbar bar so toggler icon is always visible */
     .navbar-custom {
         background: rgba(245, 244, 242, 0.97) !important;
@@ -735,6 +754,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
 /* Shared tablet alignment for content sections */
 @media (min-width: 768px) and (max-width: 1024px) {
+
     body:not(.login-page):not(.signup-page) header .container,
     body:not(.login-page):not(.signup-page) section .container {
         padding-left: 24px;
@@ -801,6 +821,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
 /* Services Page: Fix On-Site Experience Alignment on Tablet */
 @media (min-width: 768px) {
+
     .services-page .services-onsite-section .row.align-items-stretch>.reveal-left,
     .services-page .services-onsite-section .row.align-items-stretch>.reveal-right {
         flex: 0 0 50%;
@@ -815,6 +836,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 }
 
 @media (min-width: 992px) {
+
     .services-page .services-onsite-section .services-onsite-media,
     .services-page .services-onsite-section .services-onsite-content {
         height: clamp(500px, 38vw, 620px);
@@ -885,9 +907,11 @@ body:not(.dark-mode) #portfolio .card-luxury p {
     0% {
         filter: drop-shadow(0 0 5px var(--soft-glow));
     }
+
     50% {
         filter: drop-shadow(0 0 20px var(--primary-accent));
     }
+
     100% {
         filter: drop-shadow(0 0 5px var(--soft-glow));
     }
@@ -981,6 +1005,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 }
 
 @media (max-width: 767.98px) {
+
     .login-page .auth-top-actions,
     .signup-page .auth-top-actions {
         top: 10px;
@@ -1104,6 +1129,7 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
 /* Login Page: mobile clarity for remember/forgot row */
 @media (max-width: 767.98px) {
+
     html,
     body {
         overflow-x: hidden;
@@ -1225,8 +1251,8 @@ footer .form-control::placeholder {
     position: relative;
     padding: 100px 0;
     background: radial-gradient(circle at 15% 30%, rgba(255, 85, 0, 0.06), transparent 50%),
-                radial-gradient(circle at 85% 70%, rgba(201, 168, 76, 0.06), transparent 50%),
-                var(--secondary-bg);
+        radial-gradient(circle at 85% 70%, rgba(201, 168, 76, 0.06), transparent 50%),
+        var(--secondary-bg);
 }
 
 .vault-hero-card {
@@ -1297,9 +1323,11 @@ footer .form-control::placeholder {
     0% {
         box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.7);
     }
+
     70% {
         box-shadow: 0 0 0 8px rgba(255, 85, 0, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(255, 85, 0, 0);
     }
@@ -1510,6 +1538,7 @@ footer .form-control::placeholder {
     border: 1px solid rgba(255, 102, 0, 0.3);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
+
 /* Home 2 Featured Drop Releases Uniform Image Sizes */
 .drop-release-img-box {
     width: 100%;
@@ -1537,6 +1566,7 @@ body.dark-mode .drop-release-img-box {
 .card-luxury:hover .drop-release-img {
     transform: scale(1.06);
 }
+
 /* Visit Info Button - Navbar CTA */
 .btn-visit-info {
     display: inline-flex;
@@ -1641,4 +1671,36 @@ footer.site-footer,
 
 .site-footer input.form-control::placeholder {
     color: #888888 !important;
+}
+
+/* Home 2: Mobile Button Alignment (One by One) */
+@media (max-width: 767.98px) {
+    .home2-hero-buttons,
+    .vault-action-buttons,
+    .home2-cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .home2-hero-buttons .btn-premium,
+    .home2-hero-buttons .btn-outline-premium,
+    .vault-action-buttons .btn,
+    .vault-action-buttons .btn-premium,
+    .vault-action-buttons .btn-outline-premium,
+    .home2-cta-buttons .btn {
+        width: 100% !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        display: block !important;
+    }
+
+    .vault-hero-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Pricing Page: Walk-In Authentication Section */
+.pricing-walkin-section {
+    background-color: #ffffff;
 }
