@@ -127,7 +127,11 @@ function initScrollAnimations() {
 
 
 // Gallery Filtering
-window.filterGallery = (category) => {
+window.filterGallery = (category, btn) => {
+    if (btn) {
+        document.querySelectorAll('.btn-outline-premium').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
     const items = document.querySelectorAll('.gallery-item');
     items.forEach(item => {
         if (category === 'all' || item.dataset.category === category) {

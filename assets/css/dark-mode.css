@@ -507,3 +507,65 @@ body.dark-mode .pricing-walkin-section h2 {
 body.dark-mode .pricing-walkin-section p {
     color: var(--text-secondary) !important;
 }
+
+/* Brand Logo in Dark Mode */
+body.dark-mode .brand-logo-magic {
+    color: #f5f4f2 !important;
+}
+
+body.dark-mode .brand-logo-icon {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 16px rgba(255, 102, 0, 0.42), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
+}
+
+body.dark-mode .site-footer .brand-logo-magic {
+    color: #f5f4f2 !important;
+}
+
+/* Consistent Primary & Secondary CTAs in Dark Mode */
+body.dark-mode .btn-premium,
+body.dark-mode .btn-primary-cta,
+body.dark-mode .btn-primary {
+    background: var(--btn-gradient) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.35);
+}
+
+body.dark-mode .btn-premium:hover,
+body.dark-mode .btn-premium:focus-visible,
+body.dark-mode .btn-primary-cta:hover,
+body.dark-mode .btn-primary-cta:focus-visible,
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-primary:focus-visible {
+    background: var(--btn-gradient) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 7px 22px rgba(255, 85, 0, 0.50);
+}
+
+body.dark-mode .btn-outline-premium,
+body.dark-mode .btn-secondary-cta,
+body.dark-mode .btn-secondary,
+body.dark-mode .btn-outline-secondary {
+    background: transparent !important;
+    border-color: var(--primary-accent) !important;
+    color: #ff8533 !important;
+    box-shadow: none;
+}
+
+body.dark-mode .btn-outline-premium:hover,
+body.dark-mode .btn-outline-premium:focus-visible,
+body.dark-mode .btn-outline-premium.active,
+body.dark-mode .btn-secondary-cta:hover,
+body.dark-mode .btn-secondary-cta:focus-visible,
+body.dark-mode .btn-secondary-cta.active,
+body.dark-mode .btn-secondary:hover,
+body.dark-mode .btn-secondary:focus-visible,
+body.dark-mode .btn-secondary.active {
+    background: var(--primary-accent) !important;
+    border-color: var(--primary-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.40);
+}
+

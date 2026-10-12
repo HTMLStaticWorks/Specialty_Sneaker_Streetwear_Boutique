@@ -22,4 +22,12 @@ html[dir="rtl"] .btn-link i {
     display: inline-block;
 }
 
+html[dir="rtl"] .site-footer .input-group .form-control {
+    border-radius: 0 50px 50px 0 !important;
+}
+
+html[dir="rtl"] .site-footer .input-group .btn-premium {
+    border-radius: 50px 0 0 50px !important;
+}
+
 /* Add more RTL specificity as needed */

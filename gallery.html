@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,7 +36,7 @@
                     <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" href="gallery.html">Release Calendar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Authentication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
@@ -83,26 +83,27 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Filters -->
-            <div class="d-flex flex-wrap justify-content-center gap-3 mt-5 reveal">
-                <button onclick="filterGallery('all')" class="btn-outline-premium active">All Drops</button>
-                <button onclick="filterGallery('jordan')" class="btn-outline-premium">Jordan / Nike</button>
-                <button onclick="filterGallery('adidas')" class="btn-outline-premium">Adidas / Yeezy</button>
-                <button onclick="filterGallery('nb')" class="btn-outline-premium">New Balance</button>
-                <button onclick="filterGallery('streetwear')" class="btn-outline-premium">Streetwear</button>
-            </div>
         </div>
     </header>
 
     <!-- Release Schedule Grid -->
     <section class="section-padding pt-5">
         <div class="container">
-            <div class="section-title reveal text-center mb-5">
+            <div class="section-title reveal text-center mb-4">
                 <h2 class="brand-font fs-1">Upcoming Releases</h2>
                 <p class="text-secondary">Mark your calendar. Limited pairs — register early for raffle access.</p>
             </div>
-            <div class="row g-4" id="gallery-container">
+
+            <!-- Filters -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 reveal">
+                <button onclick="filterGallery('all', this)" class="btn-outline-premium active">All Drops</button>
+                <button onclick="filterGallery('jordan', this)" class="btn-outline-premium">Jordan / Nike</button>
+                <button onclick="filterGallery('adidas', this)" class="btn-outline-premium">Adidas / Yeezy</button>
+                <button onclick="filterGallery('nb', this)" class="btn-outline-premium">New Balance</button>
+                <button onclick="filterGallery('streetwear', this)" class="btn-outline-premium">Streetwear</button>
+            </div>
+
+            <div class="row g-4 justify-content-center" id="gallery-container">
                 <!-- Drop Item 1 -->
                 <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="jordan">
                     <div class="card-luxury p-0 overflow-hidden">
@@ -139,6 +140,19 @@
                             <h4 class="brand-font">New Balance 9060 "GRAILS Collab"</h4>
                             <p class="small text-secondary mb-1">Sizes: 6–12 US &nbsp;|&nbsp; Price: $160 — 50 pairs only</p>
                             <span class="badge rounded-pill bg-light accent-font" style="color: var(--third-accent);">New Balance</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Drop Item 4 -->
+                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="streetwear">
+                    <div class="card-luxury p-0 overflow-hidden">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYGkVM_D572Rn35H-1Q5o6y0wxRDiCviA7fCvQ7dG-Sy8in3d53hwRjBVL&s=10" alt="Supreme Box Logo Drop"
+                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
+                        <div class="p-4">
+                            <span class="badge rounded-pill mb-2" style="background: var(--primary-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING THU 25 SEP</span>
+                            <h4 class="brand-font">Supreme Box Logo Hooded Sweatshirt</h4>
+                            <p class="small text-secondary mb-1">Sizes: S–XL &nbsp;|&nbsp; Price: $298 — Online Raffle Only</p>
+                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent);">Streetwear</span>
                         </div>
                     </div>
                 </div>
