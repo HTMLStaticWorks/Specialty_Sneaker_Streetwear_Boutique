@@ -313,6 +313,21 @@ body.dark-mode.signup-page .form-label {
     letter-spacing: 0.01em;
 }
 
+/* Contact Page (Dark Mode): ensure all form inputs and Subject field share the same readable text color */
+body.dark-mode.contact-page .card-luxury form .form-control::placeholder,
+body.dark-mode.contact-page select.form-control,
+body.dark-mode .card-luxury form select.form-control,
+body.dark-mode.contact-page select.form-control option[value=""] {
+    color: rgba(33, 37, 41, 0.75) !important;
+    opacity: 1 !important;
+}
+
+body.dark-mode.contact-page select.form-control option:not([value=""]),
+body.dark-mode .card-luxury form select.form-control option:not([value=""]) {
+    color: #111111 !important;
+    background-color: #ffffff !important;
+}
+
 /* Homepage Dark Mode Fixes */
 body.dark-mode .home1-services-section {
     background:

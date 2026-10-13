@@ -771,6 +771,21 @@ body:not(.dark-mode) #portfolio .card-luxury p {
         linear-gradient(rgba(245, 244, 242, 0.94), rgba(245, 244, 242, 0.94));
 }
 
+.home1-services-section .home1-service-card {
+    padding: 30px 24px;
+}
+
+.home1-services-section .home1-service-title {
+    font-size: clamp(1.15rem, 1.25vw, 1.25rem);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    white-space: nowrap;
+}
+
+.home1-services-section .home1-service-text {
+    margin-bottom: 1.5rem;
+}
+
 /* Home 1: section below services should use a clean readable font */
 .home1-trust-strip .accent-font {
     font-family: 'Poppins', sans-serif;
@@ -918,6 +933,22 @@ body:not(.dark-mode) #portfolio .card-luxury p {
 
     .home2-praise-author {
         margin-top: auto !important;
+    }
+}
+
+/* Mobile & Tablet Collapsed Navbar - Keep CTA button below utility icons */
+@media (max-width: 1024px) {
+    .navbar-custom .navbar-collapse .d-flex {
+        flex-wrap: wrap !important;
+    }
+
+    .navbar-custom .navbar-collapse .btn-visit-info {
+        display: inline-flex !important;
+        width: 100% !important;
+        height: 42px !important;
+        justify-content: center !important;
+        text-align: center !important;
+        margin-top: 4px;
     }
 }
 
@@ -1302,6 +1333,8 @@ footer,
         align-items: center;
         justify-content: center;
         margin-bottom: 0.5rem;
+        white-space: normal;
+        font-size: 1.15rem;
     }
 
     .home1-services-section .home1-service-text {
@@ -1379,6 +1412,24 @@ footer,
         display: inline;
         white-space: nowrap;
     }
+
+    .home1-services-section .home1-service-title {
+        white-space: normal;
+        font-size: 1.25rem;
+    }
+}
+
+/* Contact page: form controls placeholder and select text color consistency */
+.contact-page .card-luxury form .form-control::placeholder,
+.contact-page .card-luxury form select.form-control,
+.contact-page .card-luxury form select.form-control option[value=""] {
+    color: rgba(33, 37, 41, 0.75) !important;
+    opacity: 1 !important;
+}
+
+.contact-page .card-luxury form select.form-control option:not([value=""]) {
+    color: #111111;
+    background-color: #ffffff;
 }
 
 /* Contact page: social icon hover effect */
@@ -1392,6 +1443,28 @@ footer,
 .contact-social-links a:hover,
 .contact-social-links a:focus-visible {
     transform: translateY(-2px);
+}
+
+/* Contact Page: Store Information Mobile One-by-One Alignment */
+@media (max-width: 767.98px) {
+    .contact-store-info-card {
+        text-align: center !important;
+    }
+
+    .contact-store-info-card .d-flex.align-items-start {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 8px !important;
+    }
+
+    .contact-store-info-card .d-flex.align-items-start div {
+        text-align: center !important;
+    }
+
+    .contact-store-info-card .contact-social-links {
+        justify-content: center !important;
+    }
 }
 
 /* Footer: hover effects for social icons and footer links */
@@ -1895,6 +1968,15 @@ footer.site-footer,
 
 .site-footer input.form-control::placeholder {
     color: #888888 !important;
+}
+
+/* Footer: 2x2 Grid Layout at 1024px View Alone */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .site-footer .row.g-5 > div {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        width: 50% !important;
+    }
 }
 
 /* Home 2: Mobile Button Alignment (One by One) */
