@@ -679,6 +679,19 @@ body.dark-mode .launch-countdown-wrap.live-status {
     border-color: rgba(16, 185, 129, 0.4);
 }
 
+body.dark-mode .launch-countdown-wrap.live-status .countdown-live-badge,
+body.dark-mode .launch-countdown-wrap.live-status .countdown-live-badge span {
+    color: #e6fffa !important;
+}
+
+body.dark-mode .shop-spotlight-card h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .shop-spotlight-card p.text-secondary {
+    color: #d1cdd8 !important;
+}
+
 /* ============================================================
    Dark Mode: Release Calendar (gallery.html) Contrast Fixes
    ============================================================ */

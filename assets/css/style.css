@@ -2167,6 +2167,52 @@ footer.site-footer,
     padding: 0.4rem 0.75rem;
 }
 
+/* Release Calendar: Top Image Badges Spacing & Gap Protection */
+.card-top-badges {
+    padding: 0.65rem 0.65rem !important;
+    gap: 0.4rem !important;
+    pointer-events: none;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden;
+}
+
+.card-top-badges .badge {
+    pointer-events: auto;
+}
+
+#gallery-container .badge-status-tag {
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+    padding: 0.3rem 0.52rem !important;
+    white-space: nowrap !important;
+    max-width: calc(52% - 0.2rem) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+#gallery-container .badge-luxury-label {
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.3rem 0.52rem !important;
+    white-space: nowrap !important;
+    max-width: calc(48% - 0.2rem) !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+#gallery-container .badge-luxury-quickstrike {
+    font-size: 0.63rem !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.28rem 0.48rem !important;
+    max-width: calc(48% - 0.2rem) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
 /* ============================================================
    Shop Page: Highlight Upcoming & Newly Released Section
    ============================================================ */
@@ -2217,12 +2263,23 @@ footer.site-footer,
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #ffffff;
     margin-bottom: 1rem;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .launch-countdown-wrap.live-status {
     background: rgba(16, 185, 129, 0.12);
     border-color: rgba(16, 185, 129, 0.35);
     color: #10b981;
+}
+
+.countdown-live-badge {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .countdown-label {
@@ -2334,6 +2391,29 @@ footer.site-footer,
     align-items: center;
     gap: 0.4rem;
     margin-bottom: 0.65rem;
+    min-height: 1.35rem;
+}
+
+/* Shop Spotlight Card Content Alignment */
+.shop-spotlight-card h4.brand-font {
+    font-size: clamp(1.15rem, 1.35vw, 1.28rem);
+    line-height: 1.25;
+    min-height: 3.25rem;
+    margin-bottom: 0.5rem !important;
+}
+
+.shop-spotlight-card p.small.text-secondary.mb-2 {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    min-height: 2.6rem;
+    margin-bottom: 0.5rem !important;
+}
+
+.shop-spotlight-card p.small.text-secondary.mb-3 {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    min-height: 3rem;
+    margin-bottom: 1rem !important;
 }
 
 .spotlight-tab-btn {
