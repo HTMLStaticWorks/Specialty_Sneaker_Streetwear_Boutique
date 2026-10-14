@@ -679,5 +679,131 @@ body.dark-mode .launch-countdown-wrap.live-status {
     border-color: rgba(16, 185, 129, 0.4);
 }
 
+/* ============================================================
+   Dark Mode: Release Calendar (gallery.html) Contrast Fixes
+   ============================================================ */
+
+/* Main Drop Cards text contrast in Dark Mode */
+body.dark-mode #gallery-container .card-luxury h4,
+body.dark-mode .gallery-item .card-luxury h4 {
+    color: #ffffff !important;
+}
+
+/* Drop card sizes and pricing subtext */
+body.dark-mode #gallery-container .card-luxury p.text-secondary,
+body.dark-mode #gallery-container .card-luxury .text-secondary,
+body.dark-mode .gallery-item .card-luxury p.text-secondary,
+body.dark-mode .gallery-item .card-luxury .text-secondary {
+    color: #d1cdd8 !important;
+}
+
+body.dark-mode #gallery-container .card-luxury p.text-secondary strong,
+body.dark-mode .gallery-item .card-luxury p.text-secondary strong {
+    color: #ffffff !important;
+}
+
+/* Drop card meta / authentic verification line (Primary Contrast Fix) */
+body.dark-mode #gallery-container .card-luxury p.text-muted,
+body.dark-mode #gallery-container .card-luxury .text-muted,
+body.dark-mode .gallery-item .card-luxury p.text-muted,
+body.dark-mode .gallery-item .card-luxury .text-muted {
+    color: #c4beb5 !important;
+}
+
+/* Drop card bottom pill tags */
+body.dark-mode #gallery-container .card-luxury .badge.bg-light,
+body.dark-mode .gallery-item .card-luxury .badge.bg-light {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    color: #eae6df !important;
+}
+
+body.dark-mode #gallery-container .card-luxury .badge.bg-light.text-secondary,
+body.dark-mode .gallery-item .card-luxury .badge.bg-light.text-secondary {
+    color: #dedede !important;
+}
+
+body.dark-mode #gallery-container .card-luxury .badge.bg-light.accent-font,
+body.dark-mode .gallery-item .card-luxury .badge.bg-light.accent-font {
+    background-color: rgba(255, 102, 0, 0.14) !important;
+    border-color: rgba(255, 102, 0, 0.32) !important;
+    color: #ff8833 !important;
+}
+
+/* Quick Filters bar text readability on Release Calendar */
+body.dark-mode.release-calendar-page .quick-filters-card h4,
+body.dark-mode .quick-filters-card h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode.release-calendar-page .quick-filters-card .text-secondary,
+body.dark-mode.release-calendar-page .quick-filters-card span.text-secondary,
+body.dark-mode .quick-filters-card .text-secondary,
+body.dark-mode .quick-filters-card span.text-secondary {
+    color: #c4beb5 !important;
+}
+
+/* Empty search / filter results card */
+body.dark-mode #noDropsFoundCard .card-luxury h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode #noDropsFoundCard .card-luxury p.text-secondary {
+    color: #c4beb5 !important;
+}
+
+/* Release Calendar Section titles & headers */
+body.dark-mode.release-calendar-page .section-title h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode.release-calendar-page .section-title p.text-secondary {
+    color: #c4beb5 !important;
+}
+
+body.dark-mode.release-calendar-page .page-hero-enhanced .page-hero-copy,
+body.dark-mode.release-calendar-page .page-hero-enhanced p.text-secondary {
+    color: #d1cdd8 !important;
+}
+
+/* Recent drops section cards on Release Calendar */
+body.dark-mode .gallery-intricate-section .card-luxury h6 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .gallery-intricate-section .card-luxury p.text-secondary {
+    color: #c4beb5 !important;
+}
+
+body.dark-mode .gallery-intricate-section .section-title h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .gallery-intricate-section .section-title p.text-secondary {
+    color: #c4beb5 !important;
+}
+
+/* Drop culture editorial section on Release Calendar */
+body.dark-mode .gallery-bts-section h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .gallery-bts-section p.text-secondary {
+    color: #c4beb5 !important;
+}
+
+body.dark-mode .gallery-bts-section .glass-effect {
+    background: rgba(26, 26, 26, 0.90) !important;
+    border-color: rgba(255, 102, 0, 0.28) !important;
+}
+
+body.dark-mode .gallery-bts-section .glass-effect p {
+    color: #f0ede8 !important;
+}
+
+body.dark-mode .gallery-bts-section .glass-effect .rounded-circle.bg-white {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
 
 

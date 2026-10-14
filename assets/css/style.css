@@ -1972,7 +1972,7 @@ footer.site-footer,
 
 /* Footer: 2x2 Grid Layout at 1024px View Alone */
 @media (min-width: 992px) and (max-width: 1024px) {
-    .site-footer .row.g-5 > div {
+    .site-footer .row.g-5>div {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         width: 50% !important;
@@ -1981,6 +1981,7 @@ footer.site-footer,
 
 /* Home 2: Mobile Button Alignment (One by One) */
 @media (max-width: 767.98px) {
+
     .home2-hero-buttons,
     .vault-action-buttons,
     .home2-cta-buttons {
@@ -2292,9 +2293,11 @@ footer.site-footer,
     0% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
     }
+
     70% {
         box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
@@ -2356,4 +2359,3 @@ footer.site-footer,
     border-color: transparent;
     box-shadow: 0 4px 12px rgba(255, 85, 0, 0.25);
 }
-
