@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initPasswordToggles();
     initBackToTop();
+    initQuickFilters();
+    initLaunchCountdowns();
+    initSpotlightTabs();
 });
 
 // Navbar Scroll Effect
@@ -126,11 +129,244 @@ function initScrollAnimations() {
 }
 
 
-// Gallery Filtering
+// Gallery & Release Calendar Filtering
+function initQuickFilters() {
+    const filterContainer = document.querySelector('.quick-filters-card');
+    if (!filterContainer) return;
+    runQuickFilters();
+}
+
+window.runQuickFilters = () => {
+    const brandEl = document.getElementById('filterBrand');
+    const luxuryEl = document.getElementById('filterLuxury');
+    const categoryEl = document.getElementById('filterCategory');
+    const sizeEl = document.getElementById('filterSize');
+    const priceEl = document.getElementById('filterPrice');
+    const statusEl = document.getElementById('filterStatus');
+
+    const brandVal = brandEl ? brandEl.value : 'all';
+    const luxuryVal = luxuryEl ? luxuryEl.value : 'all';
+    const categoryVal = categoryEl ? categoryEl.value : 'all';
+    const sizeVal = sizeEl ? sizeEl.value : 'all';
+    const priceVal = priceEl ? priceEl.value : 'all';
+    const statusVal = statusEl ? statusEl.value : 'all';
+
+    const items = document.querySelectorAll('.gallery-item');
+    let visibleCount = 0;
+
+    items.forEach(item => {
+        // 1. Brand match
+        const itemBrand = (item.dataset.brand || item.dataset.category || '').toLowerCase();
+        let matchBrand = (brandVal === 'all') || itemBrand.includes(brandVal.toLowerCase());
+
+        // 2. Luxury Label match
+        const itemLuxury = (item.dataset.luxuryLabel || '').toLowerCase();
+        let matchLuxury = (luxuryVal === 'all') || (itemLuxury === luxuryVal.toLowerCase());
+
+        // 3. Category match
+        const itemCategory = (item.dataset.category || '').toLowerCase();
+        let matchCategory = (categoryVal === 'all') || (itemCategory === categoryVal.toLowerCase());
+
+        // 4. Size match
+        const rawSizes = (item.dataset.sizes || '').toLowerCase();
+        const itemSizes = rawSizes ? rawSizes.split(',').map(s => s.trim()) : [];
+        let matchSize = false;
+        if (sizeVal === 'all') {
+            matchSize = true;
+        } else if (sizeVal === 'us-6-7.5') {
+            const range = ['5', '5.5', '6', '6.5', '7', '7.5'];
+            matchSize = range.some(s => itemSizes.includes(s));
+        } else if (sizeVal === 'us-8-9.5') {
+            const range = ['8', '8.5', '9', '9.5'];
+            matchSize = range.some(s => itemSizes.includes(s));
+        } else if (sizeVal === 'us-10-11.5') {
+            const range = ['10', '10.5', '11', '11.5'];
+            matchSize = range.some(s => itemSizes.includes(s));
+        } else if (sizeVal === 'us-12-14') {
+            const range = ['12', '12.5', '13', '13.5', '14'];
+            matchSize = range.some(s => itemSizes.includes(s));
+        } else {
+            matchSize = itemSizes.includes(sizeVal.toLowerCase());
+        }
+
+        // 5. Price match
+        const itemPrice = parseFloat(item.dataset.price || '0');
+        let matchPrice = false;
+        if (priceVal === 'all') {
+            matchPrice = true;
+        } else if (priceVal === 'under-150') {
+            matchPrice = itemPrice > 0 && itemPrice < 150;
+        } else if (priceVal === '150-200') {
+            matchPrice = itemPrice >= 150 && itemPrice <= 200;
+        } else if (priceVal === '200-250') {
+            matchPrice = itemPrice >= 200 && itemPrice <= 250;
+        } else if (priceVal === 'above-250') {
+            matchPrice = itemPrice > 250;
+        }
+
+        // 6. Release Status match
+        const itemStatus = (item.dataset.releaseStatus || '').toLowerCase();
+        let matchStatus = false;
+        if (statusVal === 'all') {
+            matchStatus = true;
+        } else if (statusVal === 'raffle-open') {
+            matchStatus = itemStatus.includes('raffle');
+        } else {
+            matchStatus = itemStatus.includes(statusVal.toLowerCase());
+        }
+
+        if (matchBrand && matchLuxury && matchCategory && matchSize && matchPrice && matchStatus) {
+            item.style.display = '';
+            item.classList.remove('d-none');
+            visibleCount++;
+        } else {
+            item.style.display = 'none';
+            item.classList.add('d-none');
+        }
+    });
+
+    // Update Counter Badge
+    const countBadge = document.getElementById('quickFilterCount');
+    if (countBadge) {
+        countBadge.textContent = `${visibleCount} Drop${visibleCount === 1 ? '' : 's'} Available`;
+    }
+
+    // Update Empty State
+    const noDropsCard = document.getElementById('noDropsFoundCard');
+    if (noDropsCard) {
+        if (visibleCount === 0) {
+            noDropsCard.classList.remove('d-none');
+        } else {
+            noDropsCard.classList.add('d-none');
+        }
+    }
+
+    // Render Active Filter Badges
+    window.renderActiveFilterTags();
+};
+
+window.applyQuickPill = (type, btn, val) => {
+    document.querySelectorAll('.btn-quick-pill').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    if (type === 'all') {
+        window.resetAllQuickFilters(false);
+        return;
+    }
+
+    // Reset dropdowns then apply specific pill filter
+    const fields = ['filterBrand', 'filterLuxury', 'filterCategory', 'filterSize', 'filterPrice', 'filterStatus'];
+    fields.forEach(f => {
+        const el = document.getElementById(f);
+        if (el) el.value = 'all';
+    });
+
+    if (type === 'brand') {
+        const sel = document.getElementById('filterBrand');
+        if (sel) sel.value = val;
+    } else if (type === 'luxury') {
+        const sel = document.getElementById('filterLuxury');
+        if (sel) sel.value = val;
+    } else if (type === 'category') {
+        const sel = document.getElementById('filterCategory');
+        if (sel) sel.value = val;
+    } else if (type === 'status') {
+        const sel = document.getElementById('filterStatus');
+        if (sel) sel.value = val;
+    } else if (type === 'price') {
+        const sel = document.getElementById('filterPrice');
+        if (sel) sel.value = val;
+    }
+
+    window.runQuickFilters();
+};
+
+window.resetAllQuickFilters = (setAllPillActive = true) => {
+    const fields = ['filterBrand', 'filterLuxury', 'filterCategory', 'filterSize', 'filterPrice', 'filterStatus'];
+    fields.forEach(f => {
+        const el = document.getElementById(f);
+        if (el) el.value = 'all';
+    });
+
+    if (setAllPillActive) {
+        document.querySelectorAll('.btn-quick-pill').forEach(b => b.classList.remove('active'));
+        const allBtn = document.querySelector('.btn-quick-pill[data-filter-type="all"]');
+        if (allBtn) allBtn.classList.add('active');
+    }
+
+    window.runQuickFilters();
+};
+
+window.renderActiveFilterTags = () => {
+    const container = document.getElementById('activeFilterBadgesContainer');
+    const wrap = document.getElementById('activeFilterTags');
+    if (!container || !wrap) return;
+
+    container.innerHTML = '';
+    const filters = [
+        { id: 'filterBrand', label: 'Brand' },
+        { id: 'filterLuxury', label: 'Luxury' },
+        { id: 'filterCategory', label: 'Category' },
+        { id: 'filterSize', label: 'Size' },
+        { id: 'filterPrice', label: 'Price' },
+        { id: 'filterStatus', label: 'Status' }
+    ];
+
+    let activeCount = 0;
+    filters.forEach(f => {
+        const el = document.getElementById(f.id);
+        if (el && el.value !== 'all') {
+            activeCount++;
+            const text = el.options[el.selectedIndex]?.text || el.value;
+            const chip = document.createElement('span');
+            chip.className = 'active-filter-chip';
+            chip.innerHTML = `${f.label}: <strong>${text}</strong> <button type="button" aria-label="Remove filter" onclick="clearSingleFilter('${f.id}')">&times;</button>`;
+            container.appendChild(chip);
+        }
+    });
+
+    if (activeCount > 0) {
+        wrap.classList.remove('d-none');
+        wrap.classList.add('d-flex');
+    } else {
+        wrap.classList.remove('d-flex');
+        wrap.classList.add('d-none');
+    }
+};
+
+window.clearSingleFilter = (selectId) => {
+    const el = document.getElementById(selectId);
+    if (el) {
+        el.value = 'all';
+        const fields = ['filterBrand', 'filterLuxury', 'filterCategory', 'filterSize', 'filterPrice', 'filterStatus'];
+        const allCleared = fields.every(id => {
+            const item = document.getElementById(id);
+            return !item || item.value === 'all';
+        });
+        if (allCleared) {
+            document.querySelectorAll('.btn-quick-pill').forEach(b => b.classList.remove('active'));
+            const allBtn = document.querySelector('.btn-quick-pill[data-filter-type="all"]');
+            if (allBtn) allBtn.classList.add('active');
+        }
+        window.runQuickFilters();
+    }
+};
+
+// Legacy/Compatibility Gallery Filtering
 window.filterGallery = (category, btn) => {
     if (btn) {
         document.querySelectorAll('.btn-outline-premium').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+    }
+    const brandSel = document.getElementById('filterBrand');
+    if (brandSel) {
+        if (category === 'all') {
+            window.resetAllQuickFilters();
+        } else if (category === 'jordan' || category === 'adidas' || category === 'nb' || category === 'streetwear') {
+            const mappedBrand = category === 'nb' ? 'new-balance' : (category === 'streetwear' ? 'supreme' : category);
+            window.applyQuickPill('brand', null, mappedBrand);
+        }
+        return;
     }
     const items = document.querySelectorAll('.gallery-item');
     items.forEach(item => {
@@ -192,3 +428,115 @@ function initBackToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+// ============================================================
+// Shop Page: Launch Countdowns & Spotlight Filters
+// ============================================================
+function initLaunchCountdowns() {
+    const countdownEls = document.querySelectorAll('[data-countdown]');
+    if (!countdownEls.length) return;
+
+    function update() {
+        const now = new Date().getTime();
+        countdownEls.forEach(el => {
+            const targetDateStr = el.getAttribute('data-countdown');
+            if (!targetDateStr) return;
+            const target = new Date(targetDateStr).getTime();
+            let diff = target - now;
+
+            // If time passed, roll into upcoming cycle for visual demo
+            if (diff <= 0) {
+                diff = Math.abs(diff) % (4 * 86400000) + 86400000;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const dEl = el.querySelector('.days');
+            const hEl = el.querySelector('.hours');
+            const mEl = el.querySelector('.minutes');
+            const sEl = el.querySelector('.seconds');
+
+            if (dEl) dEl.textContent = String(days).padStart(2, '0');
+            if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+            if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+            if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
+        });
+    }
+
+    update();
+    setInterval(update, 1000);
+}
+
+function initSpotlightTabs() {
+    const tabButtons = document.querySelectorAll('.spotlight-tab-btn');
+    if (!tabButtons.length) return;
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-spotlight-filter') || 'all';
+            const cards = document.querySelectorAll('.spotlight-item');
+
+            cards.forEach(card => {
+                const type = (card.getAttribute('data-release-type') || '').toLowerCase(); // upcoming or newly-released
+                const cat = (card.getAttribute('data-item-type') || '').toLowerCase(); // sneaker or apparel
+
+                let show = false;
+                if (filter === 'all') {
+                    show = true;
+                } else if (filter === 'upcoming') {
+                    show = (type === 'upcoming');
+                } else if (filter === 'newly-released') {
+                    show = (type === 'newly-released');
+                } else if (filter === 'sneakers') {
+                    show = (cat === 'sneakers');
+                } else if (filter === 'apparel') {
+                    show = (cat === 'apparel');
+                }
+
+                if (show) {
+                    card.style.display = '';
+                    card.classList.remove('d-none');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.add('d-none');
+                }
+            });
+        });
+    });
+}
+
+window.prepareNotification = (productName) => {
+    const titleInput = document.getElementById('notifProductName');
+    if (titleInput) titleInput.value = productName || 'GRAILS Exclusive Drop';
+    const textSpan = document.getElementById('notifModalProductName');
+    if (textSpan) textSpan.textContent = productName || 'Selected Release';
+};
+
+window.handleNotifySubmit = (e) => {
+    if (e) e.preventDefault();
+    const alertBox = document.getElementById('notifSuccessAlert');
+    const form = document.getElementById('dropNotifyForm');
+    if (alertBox && form) {
+        form.classList.add('d-none');
+        alertBox.classList.remove('d-none');
+        setTimeout(() => {
+            const modalEl = document.getElementById('getNotifiedModal');
+            if (modalEl && window.bootstrap) {
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+            }
+            setTimeout(() => {
+                form.reset();
+                form.classList.remove('d-none');
+                alertBox.classList.add('d-none');
+            }, 600);
+        }, 2200);
+    }
+};
+

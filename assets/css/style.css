@@ -2010,3 +2010,350 @@ footer.site-footer,
 .pricing-walkin-section {
     background-color: #ffffff;
 }
+
+/* ============================================================
+   Release Calendar: Quick Filters System
+   ============================================================ */
+.quick-filters-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: var(--transition-smooth);
+}
+
+.quick-filter-icon-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 85, 0, 0.12);
+    color: var(--primary-accent);
+    font-size: 1.1rem;
+}
+
+.quick-filter-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.quick-filter-select {
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 0.55rem 2rem 0.55rem 0.85rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.quick-filter-select:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.18);
+    outline: none;
+}
+
+.btn-quick-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-quick-pill:hover {
+    border-color: var(--primary-accent);
+    background: rgba(255, 85, 0, 0.08);
+    color: var(--primary-accent);
+    transform: translateY(-1px);
+}
+
+.btn-quick-pill.active {
+    background: var(--btn-gradient) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 12px rgba(255, 85, 0, 0.28);
+}
+
+.active-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255, 85, 0, 0.10);
+    border: 1px solid rgba(255, 85, 0, 0.25);
+    color: var(--text-primary);
+}
+
+.active-filter-chip button {
+    background: transparent;
+    border: none;
+    color: var(--primary-accent);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.active-filter-chip button:hover {
+    color: #cc3300;
+}
+
+.badge-luxury-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-transform: uppercase;
+}
+
+.badge-luxury-grail {
+    background: linear-gradient(135deg, #c9a84c, #b08d32);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(201, 168, 76, 0.3);
+}
+
+.badge-luxury-collab {
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.badge-luxury-quickstrike {
+    background: linear-gradient(135deg, #ff5500, #ff8800);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(255, 85, 0, 0.3);
+}
+
+.badge-luxury-capsule {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    color: #f9fafb;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.badge-status-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 0.75rem;
+}
+
+/* ============================================================
+   Shop Page: Highlight Upcoming & Newly Released Section
+   ============================================================ */
+.shop-spotlight-section {
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shop-spotlight-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.shop-spotlight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(255, 85, 0, 0.15);
+    border-color: rgba(255, 85, 0, 0.4);
+}
+
+.shop-spotlight-img-wrap {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: #111;
+}
+
+.shop-spotlight-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shop-spotlight-card:hover .shop-spotlight-img-wrap img {
+    transform: scale(1.06);
+}
+
+.launch-countdown-wrap {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.65rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.launch-countdown-wrap.live-status {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.35);
+    color: #10b981;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--primary-accent);
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.launch-countdown-wrap.live-status .countdown-label {
+    color: #10b981;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 38px;
+    background: rgba(255, 255, 255, 0.10);
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+.countdown-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.countdown-sub {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+}
+
+.countdown-sep {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    line-height: 1;
+}
+
+.live-pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #10b981;
+    display: inline-block;
+    box-shadow: 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: livePulse 1.6s infinite;
+}
+
+@keyframes livePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.btn-notify-cta {
+    background: linear-gradient(135deg, #1a1a1a, #2d3436);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 85, 0, 0.3);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.btn-notify-cta:hover {
+    background: var(--btn-gradient);
+    color: #ffffff !important;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(255, 85, 0, 0.3);
+}
+
+.release-date-badge {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+}
+
+.spotlight-tab-btn {
+    border-radius: 50px;
+    padding: 7px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.spotlight-tab-btn:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+.spotlight-tab-btn.active {
+    background: var(--btn-gradient);
+    color: #ffffff !important;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(255, 85, 0, 0.25);
+}
+

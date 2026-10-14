@@ -94,92 +94,406 @@
                 <p class="text-secondary">Mark your calendar. Limited pairs — register early for raffle access.</p>
             </div>
 
-            <!-- Filters -->
-            <div class="d-flex flex-wrap justify-content-center gap-3 mb-5 reveal">
-                <button onclick="filterGallery('all', this)" class="btn-outline-premium active">All Drops</button>
-                <button onclick="filterGallery('jordan', this)" class="btn-outline-premium">Jordan / Nike</button>
-                <button onclick="filterGallery('adidas', this)" class="btn-outline-premium">Adidas / Yeezy</button>
-                <button onclick="filterGallery('nb', this)" class="btn-outline-premium">New Balance</button>
-                <button onclick="filterGallery('streetwear', this)" class="btn-outline-premium">Streetwear</button>
+            <!-- Quick Filters System -->
+            <div class="quick-filters-card glass-effect rounded-4 p-4 mb-5 reveal shadow-lg">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3 border-bottom pb-3" style="border-color: rgba(255, 85, 0, 0.15) !important;">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="quick-filter-icon-badge"><i class="bi bi-funnel-fill"></i></span>
+                        <div>
+                            <h4 class="brand-font mb-0" style="font-size: 1.25rem;">Quick Filters</h4>
+                            <span class="text-secondary small">Browse by brand, luxury label, category, size, price, and release status</span>
+                        </div>
+                        <span id="quickFilterCount" class="badge rounded-pill ms-2" style="background: rgba(255, 85, 0, 0.12); color: var(--primary-accent); border: 1px solid rgba(255, 85, 0, 0.25); font-size: 0.82rem; padding: 0.45rem 0.85rem;">9 Drops Available</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 ms-auto">
+                        <button id="resetAllFilters" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1" onclick="resetAllQuickFilters()">
+                            <i class="bi bi-arrow-counterclockwise me-1"></i> Reset All
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Tap Popular Filter Pills -->
+                <div class="quick-filter-pills d-flex flex-wrap gap-2 mb-4 align-items-center">
+                    <span class="small text-secondary fw-semibold me-1"><i class="bi bi-lightning-charge-fill" style="color: var(--primary-accent);"></i> Quick:</span>
+                    <button type="button" class="btn-quick-pill active" data-filter-type="all" onclick="applyQuickPill('all', this)">All Drops</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="brand" data-val="jordan" onclick="applyQuickPill('brand', this, 'jordan')">Jordan / Nike</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="brand" data-val="adidas" onclick="applyQuickPill('brand', this, 'adidas')">Adidas / Yeezy</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="brand" data-val="new-balance" onclick="applyQuickPill('brand', this, 'new-balance')">New Balance</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="brand" data-val="supreme" onclick="applyQuickPill('brand', this, 'supreme')">Streetwear</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="luxury" data-val="tier-0-grail" onclick="applyQuickPill('luxury', this, 'tier-0-grail')">✨ Tier 0 Grails</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="status" data-val="raffle-open" onclick="applyQuickPill('status', this, 'raffle-open')">🎟️ Raffle Open</button>
+                    <button type="button" class="btn-quick-pill" data-filter-type="price" data-val="under-150" onclick="applyQuickPill('price', this, 'under-150')">💵 Under $150</button>
+                </div>
+
+                <!-- 6 Quick Filter Controls Grid -->
+                <div class="row g-3">
+                    <!-- 1. Brand Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterBrand" class="form-label quick-filter-label">
+                            <i class="bi bi-tag-fill" style="color: var(--primary-accent);"></i> Brand
+                        </label>
+                        <select id="filterBrand" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Brands</option>
+                            <option value="jordan">Jordan</option>
+                            <option value="nike">Nike</option>
+                            <option value="adidas">Adidas / Yeezy</option>
+                            <option value="new-balance">New Balance</option>
+                            <option value="supreme">Supreme / Streetwear</option>
+                        </select>
+                    </div>
+
+                    <!-- 2. Luxury Label Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterLuxury" class="form-label quick-filter-label">
+                            <i class="bi bi-gem" style="color: var(--gold-highlight);"></i> Luxury Label
+                        </label>
+                        <select id="filterLuxury" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Luxury Labels</option>
+                            <option value="tier-0-grail">Tier 0 Grail</option>
+                            <option value="collab-exclusive">Collab Exclusive</option>
+                            <option value="limited-quickstrike">Limited Quickstrike</option>
+                            <option value="boutique-capsule">Boutique Capsule</option>
+                        </select>
+                    </div>
+
+                    <!-- 3. Category Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterCategory" class="form-label quick-filter-label">
+                            <i class="bi bi-grid-fill" style="color: var(--primary-accent);"></i> Category
+                        </label>
+                        <select id="filterCategory" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Categories</option>
+                            <option value="retro-highs">High-Tops &amp; Retros</option>
+                            <option value="runners">Runners &amp; Lows</option>
+                            <option value="slides">Slides &amp; Slip-Ons</option>
+                            <option value="streetwear">Streetwear &amp; Apparel</option>
+                        </select>
+                    </div>
+
+                    <!-- 4. Size Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterSize" class="form-label quick-filter-label">
+                            <i class="bi bi-rulers" style="color: var(--primary-accent);"></i> Size
+                        </label>
+                        <select id="filterSize" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Sizes</option>
+                            <optgroup label="Sneaker Sizes (US Men)">
+                                <option value="us-6-7.5">US 6 – 7.5</option>
+                                <option value="us-8-9.5">US 8 – 9.5</option>
+                                <option value="us-10-11.5">US 10 – 11.5</option>
+                                <option value="us-12-14">US 12 – 14</option>
+                            </optgroup>
+                            <optgroup label="Apparel Sizes">
+                                <option value="s">Size S</option>
+                                <option value="m">Size M</option>
+                                <option value="l">Size L</option>
+                                <option value="xl">Size XL</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- 5. Price Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterPrice" class="form-label quick-filter-label">
+                            <i class="bi bi-currency-dollar" style="color: var(--gold-highlight);"></i> Price
+                        </label>
+                        <select id="filterPrice" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Prices</option>
+                            <option value="under-150">Under $150</option>
+                            <option value="150-200">$150 – $200</option>
+                            <option value="200-250">$200 – $250</option>
+                            <option value="above-250">$250 and Above</option>
+                        </select>
+                    </div>
+
+                    <!-- 6. Release Status Filter -->
+                    <div class="col-xl-2 col-md-4 col-sm-6">
+                        <label for="filterStatus" class="form-label quick-filter-label">
+                            <i class="bi bi-calendar-check-fill" style="color: var(--primary-accent);"></i> Release Status
+                        </label>
+                        <select id="filterStatus" class="form-select quick-filter-select" onchange="runQuickFilters()">
+                            <option value="all">All Statuses</option>
+                            <option value="dropping-this-week">Dropping This Week</option>
+                            <option value="raffle-open">Raffle Open (All)</option>
+                            <option value="online-raffle">Online Raffle Only</option>
+                            <option value="in-store-raffle">In-Store Raffle Only</option>
+                            <option value="dropping-soon">Dropping Soon</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Active Filter Tags Row -->
+                <div id="activeFilterTags" class="d-none flex-wrap align-items-center gap-2 mt-3 pt-3 border-top" style="border-color: rgba(255, 85, 0, 0.15) !important;">
+                    <span class="small text-secondary fw-semibold">Active:</span>
+                    <div id="activeFilterBadgesContainer" class="d-flex flex-wrap gap-2"></div>
+                    <button class="btn btn-link btn-sm text-decoration-none p-0 ms-2 text-danger small fw-semibold" onclick="resetAllQuickFilters()">
+                        Clear All
+                    </button>
+                </div>
             </div>
 
             <div class="row g-4 justify-content-center" id="gallery-container">
                 <!-- Drop Item 1 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="jordan">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvep729tZKoA6oMXzMt2C9ZG8O4Dmfatf2AzAB4uZ-buZ_jGjpEN2m1gU&s=10" alt="Air Jordan Release"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--primary-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING SAT 20 SEP</span>
-                            <h4 class="brand-font">Air Jordan 4 "Military Black"</h4>
-                            <p class="small text-secondary mb-1">Sizes: 7–14 US &nbsp;|&nbsp; Price: $230</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent);">Jordan / Nike</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="jordan nike"
+                    data-luxury-label="tier-0-grail"
+                    data-category="retro-highs"
+                    data-sizes="7,7.5,8,8.5,9,9.5,10,10.5,11,11.5,12,13,14"
+                    data-price="230"
+                    data-release-status="dropping-this-week">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvep729tZKoA6oMXzMt2C9ZG8O4Dmfatf2AzAB4uZ-buZ_jGjpEN2m1gU&s=10" alt="Air Jordan Release"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--primary-accent); color: white;">DROPPING SAT 20 SEP</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-grail"><i class="bi bi-gem"></i> Tier 0 Grail</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Air Jordan 4 "Military Black"</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 7–14 US &nbsp;|&nbsp; <strong>Price:</strong> $230</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-check-circle-fill text-success me-1"></i> Verified Authentic &nbsp;|&nbsp; Confirmed Drop</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent); border: 1px solid rgba(255,85,0,0.2);">Jordan / Nike</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Retro Highs</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$230</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Drop Item 2 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="adidas">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThsnl6FQXkyi376xC5Yeelz-KqXzmXdYKD6DJ4_-enMCVt6FoT7FQtIEyJ&s=10" alt="Yeezy Slide Release"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--secondary-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING SUN 21 SEP</span>
-                            <h4 class="brand-font">Yeezy Foam Runner "Vermillion"</h4>
-                            <p class="small text-secondary mb-1">Sizes: 6–13 US &nbsp;|&nbsp; Price: $90</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--secondary-accent);">Adidas / Yeezy</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="adidas yeezy"
+                    data-luxury-label="limited-quickstrike"
+                    data-category="slides"
+                    data-sizes="6,7,8,9,10,11,12,13"
+                    data-price="90"
+                    data-release-status="dropping-this-week">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThsnl6FQXkyi376xC5Yeelz-KqXzmXdYKD6DJ4_-enMCVt6FoT7FQtIEyJ&s=10" alt="Yeezy Slide Release"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--secondary-accent); color: white;">DROPPING SUN 21 SEP</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-quickstrike"><i class="bi bi-lightning-charge-fill"></i> Limited Quickstrike</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Yeezy Foam Runner "Vermillion"</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 6–13 US &nbsp;|&nbsp; <strong>Price:</strong> $90</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-check-circle-fill text-success me-1"></i> Verified Authentic &nbsp;|&nbsp; First-Come Queue</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--secondary-accent); border: 1px solid rgba(0,0,0,0.15);">Adidas / Yeezy</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Slides &amp; Slip-Ons</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$90</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Drop Item 3 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="nb">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSomOvg8LkPF-f0_5PDt7lgLQEaDLnE4hugAH8mwmdmYA&s=10" alt="New Balance 9060 Release"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--third-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING FRI 26 SEP</span>
-                            <h4 class="brand-font">New Balance 9060 "GRAILS Collab"</h4>
-                            <p class="small text-secondary mb-1">Sizes: 6–12 US &nbsp;|&nbsp; Price: $160 — 50 pairs only</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--third-accent);">New Balance</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="new-balance"
+                    data-luxury-label="collab-exclusive"
+                    data-category="runners"
+                    data-sizes="6,6.5,7,7.5,8,8.5,9,9.5,10,11,12"
+                    data-price="160"
+                    data-release-status="dropping-soon">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSomOvg8LkPF-f0_5PDt7lgLQEaDLnE4hugAH8mwmdmYA&s=10" alt="New Balance 9060 Release"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--third-accent); color: white;">DROPPING FRI 26 SEP</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-collab"><i class="bi bi-stars"></i> Collab Exclusive</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">New Balance 9060 "GRAILS Collab"</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 6–12 US &nbsp;|&nbsp; <strong>Price:</strong> $160 — 50 pairs only</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-patch-check-fill text-warning me-1"></i> Special Box &amp; Custom Dustbag</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--third-accent); border: 1px solid rgba(201,168,76,0.3);">New Balance</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Runners &amp; Lows</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$160</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Drop Item 4 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="streetwear">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYGkVM_D572Rn35H-1Q5o6y0wxRDiCviA7fCvQ7dG-Sy8in3d53hwRjBVL&s=10" alt="Supreme Box Logo Drop"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--primary-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING THU 25 SEP</span>
-                            <h4 class="brand-font">Supreme Box Logo Hooded Sweatshirt</h4>
-                            <p class="small text-secondary mb-1">Sizes: S–XL &nbsp;|&nbsp; Price: $298 — Online Raffle Only</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent);">Streetwear</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="supreme streetwear"
+                    data-luxury-label="boutique-capsule"
+                    data-category="streetwear"
+                    data-sizes="s,m,l,xl"
+                    data-price="298"
+                    data-release-status="online-raffle raffle-open">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYGkVM_D572Rn35H-1Q5o6y0wxRDiCviA7fCvQ7dG-Sy8in3d53hwRjBVL&s=10" alt="Supreme Box Logo Drop"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: #dc3545; color: white;">ONLINE RAFFLE OPEN</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-capsule"><i class="bi bi-shield-shaded"></i> Boutique Capsule</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Supreme Box Logo Hooded Sweatshirt</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> S–XL &nbsp;|&nbsp; <strong>Price:</strong> $298 — Online Raffle Only</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-clock-history text-info me-1"></i> Raffle closes Thu 25 Sep midnight</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent); border: 1px solid rgba(255,85,0,0.2);">Streetwear</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Hoodies &amp; Tops</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$298</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Drop Item 5 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="jordan">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="assets/images/drop-travis-scott.jpg" alt="Travis Scott x Air Jordan 1 Low Drop"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--secondary-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING SAT 27 SEP</span>
-                            <h4 class="brand-font">Travis Scott x Air Jordan 1 Low OG</h4>
-                            <p class="small text-secondary mb-1">Sizes: 6–13 US &nbsp;|&nbsp; Price: $190 — In-Store Raffle</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--secondary-accent);">Jordan / Nike</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="jordan nike"
+                    data-luxury-label="tier-0-grail"
+                    data-category="runners"
+                    data-sizes="6,7,8,8.5,9,9.5,10,10.5,11,12,13"
+                    data-price="190"
+                    data-release-status="in-store-raffle raffle-open">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="assets/images/drop-travis-scott.jpg" alt="Travis Scott x Air Jordan 1 Low Drop"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--secondary-accent); color: white;">IN-STORE RAFFLE</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-grail"><i class="bi bi-gem"></i> Tier 0 Grail</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Travis Scott x Air Jordan 1 Low OG</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 6–13 US &nbsp;|&nbsp; <strong>Price:</strong> $190 — In-Store Raffle</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-geo-alt-fill text-danger me-1"></i> In-Store Pick-Up Sat 27 Sep</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--secondary-accent); border: 1px solid rgba(0,0,0,0.15);">Jordan / Nike</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Runners &amp; Lows</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$190</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Drop Item 6 -->
-                <div class="col-lg-4 col-md-6 gallery-item reveal" data-category="adidas">
-                    <div class="card-luxury p-0 overflow-hidden">
-                        <img src="assets/images/drop-wales-bonner.jpg" alt="Adidas Samba Wales Bonner Drop"
-                            class="img-fluid w-100 h-100 object-fit-cover" style="min-height: 400px; height: 400px;">
-                        <div class="p-4">
-                            <span class="badge rounded-pill mb-2" style="background: var(--third-accent); color: white; font-size: 0.72rem; letter-spacing: 1px;">DROPPING SUN 28 SEP</span>
-                            <h4 class="brand-font">Adidas Samba OG x Wales Bonner</h4>
-                            <p class="small text-secondary mb-1">Sizes: 5–12 US &nbsp;|&nbsp; Price: $250 — Limited Tier</p>
-                            <span class="badge rounded-pill bg-light accent-font" style="color: var(--third-accent);">Adidas / Yeezy</span>
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="adidas yeezy"
+                    data-luxury-label="collab-exclusive"
+                    data-category="runners"
+                    data-sizes="5,6,7,8,8.5,9,9.5,10,11,12"
+                    data-price="250"
+                    data-release-status="dropping-soon">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="assets/images/drop-wales-bonner.jpg" alt="Adidas Samba Wales Bonner Drop"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--third-accent); color: white;">DROPPING SUN 28 SEP</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-collab"><i class="bi bi-stars"></i> Collab Exclusive</span>
                         </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Adidas Samba OG x Wales Bonner</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 5–12 US &nbsp;|&nbsp; <strong>Price:</strong> $250 — Limited Tier</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-star-fill text-warning me-1"></i> Hand-stitched premium leather detailing</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--third-accent); border: 1px solid rgba(201,168,76,0.3);">Adidas / Yeezy</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Runners &amp; Lows</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$250</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drop Item 7 -->
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="nike"
+                    data-luxury-label="limited-quickstrike"
+                    data-category="runners"
+                    data-sizes="7,7.5,8,8.5,9,9.5,10,10.5,11,12,13"
+                    data-price="115"
+                    data-release-status="dropping-this-week">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQczU15iXEuK59UwkOzBqmXcaPN7YpIGEo_zq7TGogIgw&s=10" alt="Nike Dunk Low Panda"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--primary-accent); color: white;">RESTOCK WED 24 SEP</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-quickstrike"><i class="bi bi-lightning-charge-fill"></i> Limited Quickstrike</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Nike Dunk Low Retro "Panda"</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 7–13 US &nbsp;|&nbsp; <strong>Price:</strong> $115</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-check-circle-fill text-success me-1"></i> Verified Authentic &nbsp;|&nbsp; Instant Ship</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent); border: 1px solid rgba(255,85,0,0.2);">Nike</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Runners &amp; Lows</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$115</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drop Item 8 -->
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="supreme streetwear"
+                    data-luxury-label="boutique-capsule"
+                    data-category="streetwear"
+                    data-sizes="s,m,l,xl"
+                    data-price="140"
+                    data-release-status="dropping-soon">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPYtuM0p8dNZUUV0wWdxDaD05sQRl3oD77NBUTU8S-WYSnwEERbzBeqf0&s=10" alt="Fear of God Hoodie"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: var(--third-accent); color: white;">DROPPING FRI 03 OCT</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-capsule"><i class="bi bi-shield-shaded"></i> Boutique Capsule</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Fear of God Essentials Knit Hoodie</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> S–XL &nbsp;|&nbsp; <strong>Price:</strong> $140 — Limited Quantity</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-award-fill text-warning me-1"></i> Heavyweight French Terry &nbsp;|&nbsp; Relaxed Fit</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent); border: 1px solid rgba(255,85,0,0.2);">Streetwear</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Hoodies &amp; Tops</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$140</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drop Item 9 -->
+                <div class="col-lg-4 col-md-6 gallery-item reveal"
+                    data-brand="jordan nike"
+                    data-luxury-label="tier-0-grail"
+                    data-category="retro-highs"
+                    data-sizes="8,8.5,9,9.5,10,10.5,11,12,13"
+                    data-price="350"
+                    data-release-status="online-raffle raffle-open">
+                    <div class="card-luxury p-0 overflow-hidden h-100 d-flex flex-column">
+                        <div class="position-relative">
+                            <img src="https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d76acbaf-c4d0-4b6f-b1b3-fe4bf2bc07b0/WMNS+AIR+JORDAN+1+RETRO+HI+OG.png" alt="Off-White Jordan 1"
+                                class="img-fluid w-100 object-fit-cover" style="min-height: 380px; height: 380px;">
+                            <span class="position-absolute top-0 start-0 m-3 badge rounded-pill badge-status-tag" style="background: #dc3545; color: white;">ONLINE RAFFLE OPEN</span>
+                            <span class="position-absolute top-0 end-0 m-3 badge badge-luxury-label badge-luxury-grail"><i class="bi bi-gem"></i> Tier 0 Grail</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="brand-font mb-2">Off-White x Air Jordan 1 Retro High</h4>
+                            <p class="small text-secondary mb-2"><strong>Sizes:</strong> 8–13 US &nbsp;|&nbsp; <strong>Price:</strong> $350 — Vault Allocation</p>
+                            <p class="small text-muted mb-3"><i class="bi bi-shield-check text-primary me-1"></i> Deadstock in Original Box &amp; Zip Tie</p>
+                            <div class="mt-auto d-flex flex-wrap gap-2 align-items-center">
+                                <span class="badge rounded-pill bg-light accent-font" style="color: var(--primary-accent); border: 1px solid rgba(255,85,0,0.2);">Jordan / Nike</span>
+                                <span class="badge rounded-pill bg-light text-secondary border">Retro Highs</span>
+                                <span class="badge rounded-pill bg-light text-secondary border ms-auto">$350</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State (Hidden by default) -->
+                <div id="noDropsFoundCard" class="col-12 d-none text-center py-5">
+                    <div class="card-luxury p-5 mx-auto" style="max-width: 540px;">
+                        <i class="bi bi-search fs-1 mb-3 d-block" style="color: var(--primary-accent);"></i>
+                        <h4 class="brand-font">No Releases Found</h4>
+                        <p class="text-secondary mb-4">No upcoming drops match the selected filter criteria. Try adjusting your brand, size, price, or release status filters.</p>
+                        <button class="btn btn-premium px-4 py-2" onclick="resetAllQuickFilters()">
+                            <i class="bi bi-arrow-counterclockwise me-1"></i> Reset All Filters
+                        </button>
                     </div>
                 </div>
             </div>
