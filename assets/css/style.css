@@ -2213,6 +2213,94 @@ footer.site-footer,
     text-overflow: ellipsis !important;
 }
 
+/* Release Calendar: Card Content Text Alignment */
+#gallery-container .gallery-item .card-luxury h4 {
+    font-size: clamp(1.1rem, 1.35vw, 1.25rem);
+    line-height: 1.3;
+    min-height: 3.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.5rem !important;
+}
+
+#gallery-container .gallery-item .card-luxury p.small.text-secondary {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    min-height: 2.35rem;
+    margin-bottom: 0.5rem !important;
+}
+
+#gallery-container .gallery-item .card-luxury p.small.text-muted {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    min-height: 2.35rem;
+    margin-bottom: 0.75rem !important;
+}
+
+/* Release Calendar: Bottom Tags Row & Badges Alignment */
+#gallery-container .gallery-item .card-bottom-badges,
+#gallery-container .gallery-item .card-luxury .mt-auto {
+    flex-wrap: nowrap !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+}
+
+#gallery-container .gallery-item .card-bottom-badges .badge,
+#gallery-container .gallery-item .card-luxury .mt-auto .badge {
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.5rem !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.01em;
+}
+
+#gallery-container .gallery-item .card-bottom-badges .badge.ms-auto,
+#gallery-container .gallery-item .card-luxury .mt-auto .badge.ms-auto {
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #gallery-container .gallery-item .card-luxury .p-4 {
+        padding: 1.25rem 0.95rem !important;
+    }
+
+    #gallery-container .gallery-item .card-luxury h4 {
+        font-size: 1.15rem;
+        min-height: 3.25rem;
+    }
+
+    #gallery-container .gallery-item .card-luxury p.small.text-secondary {
+        min-height: 2.45rem;
+    }
+
+    #gallery-container .gallery-item .card-luxury p.small.text-muted {
+        min-height: 2.45rem;
+    }
+
+    #gallery-container .gallery-item .card-bottom-badges,
+    #gallery-container .gallery-item .card-luxury .mt-auto {
+        flex-wrap: nowrap !important;
+        gap: 0.25rem !important;
+    }
+
+    #gallery-container .gallery-item .card-bottom-badges .badge,
+    #gallery-container .gallery-item .card-luxury .mt-auto .badge {
+        font-size: 0.68rem !important;
+        padding: 0.26rem 0.42rem !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+    }
+
+    #gallery-container .gallery-item .card-bottom-badges .badge.ms-auto,
+    #gallery-container .gallery-item .card-luxury .mt-auto .badge.ms-auto {
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+
 /* ============================================================
    Shop Page: Highlight Upcoming & Newly Released Section
    ============================================================ */
